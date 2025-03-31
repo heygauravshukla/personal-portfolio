@@ -1,0 +1,237 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-VariableFont_opsz,wght.ttf");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+html {
+  --brand: var(--green-10);
+  --link: var(--indigo-7);
+  --link-visited: var(--purple-7);
+  --text-1: var(--gray-12);
+  --text-2: var(--gray-7);
+  --surface-1: var(--gray-0);
+  --surface-2: var(--gray-2);
+  --surface-3: var(--gray-3);
+  --surface-4: var(--gray-4);
+  --scrollthumb-color: var(--gray-7);
+
+  --font-brand: "Inter", sans-serif;
+
+  -webkit-text-size-adjust: none;
+
+  block-size: 100%;
+  accent-color: var(--brand, var(--link));
+  caret-color: var(--brand, var(--link));
+  background-color: var(--surface-1);
+  color: var(--text-2);
+  color-scheme: light;
+  font-family: var(--font-brand);
+  line-height: var(--font-lineheight-3);
+  scrollbar-color: var(--scrollthumb-color) transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --brand: var(--green-5);
+    --link: var(--indigo-3);
+    --link-visited: var(--purple-3);
+    --text-1: var(--gray-1);
+    --text-2: var(--gray-4);
+    --surface-1: var(--gray-9);
+    --surface-2: var(--gray-8);
+    --surface-3: var(--gray-7);
+    --surface-4: var(--gray-6);
+    --scrollthumb-color: var(--gray-6);
+    --shadow-strength: 10%;
+    --shadow-color: 220 40% 2%;
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: var(--font-lineheight-0);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-1);
+  text-wrap: balance;
+  font-weight: var(--font-weight-9);
+}
+
+p,
+li {
+  max-width: 65ch;
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--brand, var(--link));
+
+  &:visited {
+    color: var(--link-visited);
+  }
+}
+
+:where(h1, h2, h3, h4) > a {
+  color: currentColor;
+  text-decoration: none;
+
+  &:visited {
+    color: currentColor;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--brand, var(--link));
+  }
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+main,
+section {
+  container-type: inline-size;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:focus-visible {
+  outline-color: var(--brand, var(--link));
+}
+
+::selection {
+  background-color: var(--brand);
+  color: var(--surface-1);
+}
+
+.icon {
+  fill: var(--text-2);
+  width: var(--size-3);
+  height: auto;
+}
+
+.wrapper {
+  max-inline-size: 1180px;
+  margin-inline: auto;
+  padding-inline: var(--size-3);
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.brand-color {
+  color: var(--brand);
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+.section {
+  margin-block-end: var(--size-8);
+}
+
+.button {
+  --btn-background-color: var(--surface-2);
+  --btn-color: var(--text-1);
+
+  cursor: pointer;
+  text-decoration: none;
+  border: 0;
+
+  display: inline flex;
+  background-color: var(--btn-background-color);
+  color: var(--btn-color);
+  padding: 1em 2em;
+
+  font-size: var(--font-size-0);
+  font-weight: var(--font-weight-6);
+  line-height: var(--font-lineheight-0);
+  letter-spacing: var(--font-letterspacing-4);
+  text-transform: uppercase;
+
+  &:visited {
+    color: var(--btn-color);
+  }
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.75;
+  }
+}
+
+.button.primary {
+  --btn-background-color: var(--brand);
+  --btn-color: var(--surface-1);
+}
+
+.button[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
