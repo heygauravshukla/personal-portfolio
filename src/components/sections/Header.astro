@@ -1,6 +1,6 @@
 ---
-import IconBars from "../icons/IconBars.astro";
-import IconXmark from "../icons/IconXmark.astro";
+import BarsSolid from "../../assets/icons/bars-solid.svg";
+import XMark from "../../assets/icons/xmark-solid.svg";
 
 export interface link {
   name: string;
@@ -46,7 +46,7 @@ export const links: link[] = [
 
     <button class="menu-opener" aria-controls="primary-nav">
       <span class="visually-hidden">Open Menu</span>
-      <IconBars />
+      <BarsSolid class="icon" />
     </button>
 
     <div class="overlay" aria-controls="primary-nav"></div>
@@ -54,7 +54,7 @@ export const links: link[] = [
     <nav id="primary-nav">
       <button class="menu-closer" aria-controls="primary-nav">
         <span class="visually-hidden">Close Menu</span>
-        <IconXmark />
+        <XMark class="icon" />
       </button>
 
       <ul class="menu">
