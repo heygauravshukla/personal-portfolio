@@ -1,0 +1,125 @@
+---
+import AvatarImage from "../../assets/gaurav-shukla.webp";
+
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
+import GitHubIcon from "../../assets/icons/github-brands.svg";
+import XIcon from "../../assets/icons/x-twitter-brands.svg";
+import LinkedInIcon from "../../assets/icons/linkedin-brands.svg";
+import InstagramIcon from "../../assets/icons/instagram-brands.svg";
+
+export interface Link {
+  name: string;
+  url: string;
+  icon?: AstroComponentFactory;
+}
+
+export const links: Link[] = [
+  {
+    name: "GitHub",
+    url: "https://github.com/heygauravshukla",
+    icon: GitHubIcon,
+  },
+  {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/heygauravshukla",
+    icon: LinkedInIcon,
+  },
+  {
+    name: "X",
+    url: "https://x.com/heygauravshukla",
+    icon: XIcon,
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/heygauravshukla",
+    icon: InstagramIcon,
+  },
+];
+---
+
+<section>
+  <div class="wrapper">
+    <div class="intro">
+      <img src={AvatarImage.src} alt="Gaurav Shukla" width="64" height="64" />
+      <h1>
+        <span class="visually-hidden">Gaurav Shukla</span>
+        Frontend developer, creator, and tech enthusiast.
+      </h1>
+      <p>
+        I’m Gaurav, a frontend developer and innovator based in India. I build
+        modern, user-focused web experiences with tools like React and Next.js,
+        passionate about creating solutions that blend design and technology
+        seamlessly.
+      </p>
+      <ul class="social-links">
+        {
+          links.map((link) => {
+            const Icon = link.icon;
+            return (
+              <li>
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  {Icon && <Icon class="icon" />}
+                  <span class="visually-hidden">
+                    Visit my {link.name} profile
+                  </span>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    padding-block: var(--size-fluid-5);
+  }
+
+  .intro {
+    display: grid;
+    gap: var(--size-4);
+  }
+
+  a {
+    display: inline;
+  }
+
+  img {
+    margin-bottom: var(--size-2);
+    border-radius: var(--radius-round);
+  }
+
+  h1 {
+    max-width: 20ch;
+    text-wrap: unset;
+    font-size: var(--font-size-fluid-3);
+    line-height: var(--font-lineheight-1);
+  }
+
+  p {
+    max-width: 70ch;
+    line-height: var(--font-lineheight-4);
+  }
+
+  .social-links {
+    list-style: none;
+    padding: 0;
+    margin-block-start: var(--size-2);
+
+    display: flex;
+    gap: var(--size-5);
+    align-items: center;
+  }
+
+  .icon {
+    width: var(--size-4);
+
+    &:hover,
+    &:focus-visible {
+      fill: var(--brand);
+    }
+  }
+</style>
