@@ -1,4 +1,6 @@
 ---
+import AvatarImage from "../../assets/gaurav-shukla.webp";
+
 import BarsIcon from "../../assets/icons/bars-solid.svg";
 import XMarkIcon from "../../assets/icons/xmark-solid.svg";
 
@@ -41,7 +43,7 @@ export const links: link[] = [
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
     <a href="/" class="logo">
-      <span>G.</span>
+      <img src={AvatarImage.src} alt="Gaurav Shukla" width="24" height="24" />
     </a>
 
     <button class="menu-opener" aria-controls="primary-nav">
@@ -107,10 +109,10 @@ export const links: link[] = [
     text-decoration: none;
     color: var(--text-1);
 
-    > span {
-      font-family: serif;
-      font-size: var(--font-size-4);
-      font-weight: var(--font-weight-9);
+    > img {
+      width: var(--size-7);
+      height: auto;
+      border-radius: var(--radius-round);
     }
   }
 
@@ -195,7 +197,7 @@ export const links: link[] = [
     nav.active {
       display: flex;
       flex-direction: column;
-      gap: var(--size-9);
+      gap: var(--size-11);
 
       position: fixed;
       inset: 0 0 0 30%;
@@ -214,6 +216,10 @@ export const links: link[] = [
     nav.active .menu {
       display: grid;
       gap: var(--size-5);
+
+      & .link {
+        font-size: var(--font-size-3);
+      }
     }
   }
 </style>
