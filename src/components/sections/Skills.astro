@@ -1,0 +1,67 @@
+---
+export const skills: string[] = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Tailwind CSS",
+  "Git",
+  "GitHub",
+  "Figma",
+];
+---
+
+<section id="skills">
+  <div class="wrapper">
+    <h2>Skills</h2>
+    <ul class="flexible-grid">
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+  </div>
+</section>
+
+<style>
+  section {
+    min-block-size: calc(100vb - var(--size-9));
+    align-content: center;
+  }
+
+  .wrapper {
+    display: grid;
+    gap: var(--size-6);
+  }
+
+  h2 {
+    font-size: var(--font-size-fluid-2);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul > * {
+    padding: var(--size-fluid-3);
+    border: var(--border-size-1) solid var(--surface-3);
+    border-radius: var(--radius-drawn-6);
+
+    text-wrap: nowrap;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @media (width > 640px) {
+    ul {
+      gap: var(--size-5);
+    }
+  }
+
+  @media (width > 1024px) {
+    ul {
+      gap: var(--size-6);
+    }
+  }
+</style>
