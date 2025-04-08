@@ -193,6 +193,16 @@ section {
   margin-block-start: var(--flow-space, 1em);
 }
 
+.flexible-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-3);
+}
+
+.flexible-grid > * {
+  flex: 1;
+}
+
 .section {
   margin-block-end: var(--size-8);
 }
