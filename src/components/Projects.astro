@@ -1,0 +1,105 @@
+---
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects"))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
+---
+
+<section id="projects">
+  <div class="wrapper">
+    <h2>Projects</h2>
+    <ul class="auto-grid">
+      {
+        projects.map((project) => (
+          <li>
+            <a href={`/projects/${project.id}`} aria-labelledby="project-name">
+              <img
+                src={project.data.img}
+                alt={project.data.img_alt}
+                width="425"
+                height="425"
+                loading="lazy"
+              />
+              <div>
+                <h3 id="project-name">{project.data.title}</h3>
+                <p>{project.data.description}</p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  section {
+    min-block-size: calc(100vb - var(--size-9));
+    align-content: center;
+    padding-block: var(--size-fluid-5);
+  }
+
+  .wrapper {
+    display: grid;
+    gap: var(--size-6);
+  }
+
+  h2 {
+    font-size: var(--font-size-fluid-2);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    background-color: var(--surface-2);
+    border-radius: var(--radius-3);
+    overflow: hidden;
+  }
+
+  li a {
+    text-decoration: none;
+
+    color: inherit;
+    display: grid;
+    gap: var(--size-2);
+  }
+
+  li img {
+    height: auto;
+    border-bottom: var(--border-size-1) solid var(--surface-3);
+    transition: scale 0.2s ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      scale: 1.05;
+    }
+  }
+
+  li div {
+    padding: var(--size-3);
+    display: grid;
+    gap: var(--size-2);
+  }
+
+  h3 {
+    font-size: var(--font-size-3);
+  }
+
+  p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+  @media (width>1200px) {
+    ul {
+      gap: var(--size-6);
+    }
+  }
+</style>
