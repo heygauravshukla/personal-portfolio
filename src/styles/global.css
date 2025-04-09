@@ -203,6 +203,17 @@ section {
   flex: 1;
 }
 
+.auto-grid {
+  --min-cell-size: var(--size-14);
+
+  display: grid;
+  gap: var(--size-3);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--min-cell-size), 100%), 1fr)
+  );
+}
+
 .section {
   margin-block-end: var(--size-8);
 }
