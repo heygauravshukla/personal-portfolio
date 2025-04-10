@@ -42,7 +42,8 @@ const { Content } = await render(project);
           class="project-img"
           src={project.data.img}
           alt={project.data.img_alt ?? `Preview image of ${project.data.title}`}
-          loading="lazy"
+          width="750"
+          height="550"
         />
         <div class="button-group">
           {
