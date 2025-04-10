@@ -19,7 +19,9 @@ const projects = (await getCollection("projects"))
             >
               <img
                 src={project.data.img}
-                alt={project.data.img_alt}
+                alt={
+                  project.data.img_alt ?? `Screenshot of ${project.data.title}`
+                }
                 width="425"
                 height="425"
                 loading="lazy"
