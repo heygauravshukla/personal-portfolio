@@ -230,6 +230,7 @@ section {
   background-color: var(--btn-background-color);
   color: var(--btn-color);
   padding: 1em 2em;
+  border-radius: var(--radius-round);
 
   font-size: var(--font-size-0);
   font-weight: var(--font-weight-6);
