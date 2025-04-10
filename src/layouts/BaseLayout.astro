@@ -2,6 +2,7 @@
 import MainHead from "../components/MainHead.astro";
 import Header from "../components/Header.astro";
 import ContactCTA from "../components/ContactCTA.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title?: string | undefined;
@@ -22,5 +23,6 @@ const { title, description }: Props = Astro.props;
       <slot />
     </main>
     <ContactCTA />
+    <Footer />
   </body>
 </html>
