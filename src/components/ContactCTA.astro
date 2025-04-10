@@ -1,0 +1,48 @@
+<section>
+  <div class="wrapper">
+    <h2>Interested in working together?</h2>
+    <a href="mailto:heygauravshukla@gmail.com" class="button primary"
+      >Send me a message</a
+    >
+  </div>
+</section>
+
+<style>
+  section {
+    padding-block: var(--size-fluid-5);
+  }
+
+  .wrapper {
+    background-color: var(--surface-2);
+    padding-block: var(--size-9);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-4);
+  }
+
+  h2 {
+    max-width: 14ch;
+    font-size: var(--font-size-fluid-2);
+    line-height: var(--font-lineheight-2);
+  }
+
+  a {
+    width: fit-content;
+  }
+
+  @media (width > 640px) {
+    .wrapper {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  @media (width > 1180px) {
+    .wrapper {
+      padding-inline: var(--size-8);
+      border-radius: var(--radius-3);
+    }
+  }
+</style>
