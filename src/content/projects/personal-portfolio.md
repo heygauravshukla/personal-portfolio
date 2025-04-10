@@ -1,7 +1,7 @@
 ---
 title: Personal Portfolio
 publishDate: 2025-03-06 10:28:00
-img: /projects/preview-personal-portfolio.jpg
+img: /projects/preview-personal-portfolio.webp
 img_alt: Preview of Personal Portfolio
 description: |
   A personal website to showcase projects and technical expertise. Fully responsive and accessible, with light/dark mode support.
