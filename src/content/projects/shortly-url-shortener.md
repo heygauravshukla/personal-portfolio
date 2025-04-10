@@ -5,6 +5,8 @@ img: /projects/preview-shortly-url-shortener.jpg
 img_alt: Preview of Shortly - URL Shortener
 description: |
   A URL shortener web application designed to quickly convert lengthy URLs into shareable short links. It includes a copy-to-clipboard button for easy sharing and stores shortened links in the browser’s localStorage for quick access across sessions.
+live_site_url: https://shortly-url-shortener-heygauravshukla.netlify.app
+source_code_url: https://github.com/heygauravshukla/url-shortening-api-landing-page
 tags:
   - React
   - Next.js
@@ -24,15 +26,6 @@ Users should be able to:
   - The `input` field is empty.
   - The submitted URL has already been shortened.
   - The submitted URL is a previously generated shortened link.
-
-## Screenshot
-
-![Preview of Shortly - URL Shortener](/projects/preview-shortly-url-shortener.jpg)
-
-## Links
-
-- Source Code: [https://github.com/heygauravshukla/url-shortening-api-landing-page](https://github.com/heygauravshukla/url-shortening-api-landing-page)
-- Live Site URL: [https://shortly-url-shortener-heygauravshukla.netlify.app](https://shortly-url-shortener-heygauravshukla.netlify.app)
 
 ## Built with
 

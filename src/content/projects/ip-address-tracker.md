@@ -5,6 +5,8 @@ img: /projects/preview-ip-address-tracker.jpg
 img_alt: Preview of IP Adress Tracker
 description: |
   An IP Address Tracker that retrieves geographical location and other details (such as ISP, city, and country) for any IP address, displaying the results on an interactive map.
+live_site_url: https://ip-address-tracker-heygauravshukla.netlify.app
+source_code_url: https://github.com/heygauravshukla/ip-address-tracker
 tags:
   - React
   - Next.js
@@ -19,15 +21,6 @@ Users should be able to:
 - See hover states for all interactive elements on the page.
 - See their own IP address on the map on the initial page load.
 - Search for any IP addresses or domains and see the key information and location.
-
-## Screenshot
-
-![Preview of IP Adress Tracker](/projects/preview-ip-address-tracker.jpg)
-
-## Links
-
-- Source Code: [https://github.com/heygauravshukla/ip-address-tracker](https://github.com/heygauravshukla/ip-address-tracker)
-- Live Site URL: [https://ip-address-tracker-heygauravshukla.netlify.app](https://ip-address-tracker-heygauravshukla.netlify.app)
 
 ## Built with
 

@@ -5,6 +5,8 @@ img: /projects/preview-personal-portfolio.jpg
 img_alt: Preview of Personal Portfolio
 description: |
   A personal website to showcase projects and technical expertise. Fully responsive and accessible, with light/dark mode support.
+live_site_url: https://heygauravshukla.netlify.app
+source_code_url: https://github.com/heygauravshukla/portfolio
 tags:
   - React
   - Next.js
@@ -20,15 +22,6 @@ Users should be able to:
 - Select their preferred color scheme (light or dark mode) for an enhanced viewing experience.
 - Navigate the website fully using keyboard controls to ensure accessibility.
 - Access detailed case studies for each project showcased on the site.
-
-## Screenshot
-
-![Preview of Personal Portfolio](/projects/preview-personal-portfolio.jpg)
-
-## Links
-
-- Source Code: [https://github.com/heygauravshukla/portfolio](https://github.com/heygauravshukla/portfolio)
-- Live Site URL: [https://heygauravshukla.netlify.app](https://heygauravshukla.netlify.app)
 
 ## Built with
 
