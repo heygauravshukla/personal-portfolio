@@ -13,7 +13,10 @@ const projects = (await getCollection("projects"))
       {
         projects.map((project) => (
           <li>
-            <a href={`/projects/${project.id}`} aria-labelledby="project-name">
+            <a
+              href={`/projects/${project.id}`}
+              aria-labelledby={`project-name-${project.id}`}
+            >
               <img
                 src={project.data.img}
                 alt={project.data.img_alt}
@@ -22,7 +25,7 @@ const projects = (await getCollection("projects"))
                 loading="lazy"
               />
               <div>
-                <h3 id="project-name">{project.data.title}</h3>
+                <h3 id={`project-name-${project.id}`}>{project.data.title}</h3>
                 <p>{project.data.description}</p>
               </div>
             </a>
