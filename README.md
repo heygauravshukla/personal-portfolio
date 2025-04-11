@@ -1,48 +1,80 @@
-# Astro Starter Kit: Basics
+# Personal Portfolio
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+This is my personal portfolio website built with Astro, Open Props, and a lot of hard work, designed to showcase my technical skills and development journey.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Table of contents
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Overview
 
-## 🚀 Project Structure
+### The challenge
 
-Inside of your Astro project, you'll see the following folders and files:
+This portfolio aims to deliver a seamless and accessible user experience. Key challenges included:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- Ensuring a responsive layout across all device sizes.
+- Making the site fully navigable via keyboard for accessibility.
+- Supporting both light and dark color schemes based on user preferences.
+- Creating dedicated case study pages for each featured project.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Screenshot
 
-## 🧞 Commands
+![Desktop preview of Personal Portfolio](/public/projects/preview-personal-portfolio.webp)
 
-All commands are run from the root of the project, from a terminal:
+### Links
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+- Source Code: [https://github.com/heygauravshukla/personal-portfolio](https://github.com/heygauravshukla/personal-portfolio)
+- Live Site URL: [https://heygauravshukla.netlify.app](https://heygauravshukla.netlify.app)
 
-## 👀 Want to learn more?
+## My process
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Built with
+
+- Semantic HTML5 markup
+- Modern CSS features
+- Mobile-first workflow
+- Static Site Generation (SSG)
+- Locally hosted dependencies (Fonts, Open Props)
+- [Astro](https://astro.build) - The web framework for content-driven websites
+- [Open Props](https://open-props.style) - Supercharged CSS variables
+- [pnpm](https://pnpm.io) - Fast, disk space efficient package manager
+
+### What I learned
+
+- Building content-driven websites with Astro
+- Using scoped styles for component-specific styling
+- Creating reusable components and layouts
+- Importing and using SVGs as components
+- Structuring collections and generating static pages from them
+
+### Continued development
+
+Planned improvements include:
+
+- Adding subtle animations and modern view transitions
+- Refactoring code into smaller reusable components
+- Building About and Contact pages
+- Introducing a blog section
+- Practicing and applying advanced CSS features
+- Enhancing the Skills section
+
+### Useful resources
+
+- [📺 Kevin Powell – Building a website with Astro](https://youtu.be/Thudicbgqtg?si=TCu1qbhV5ZIcaZvG) - Helpful walkthrough of Astro’s fundamentals and project setup.
+- [📘 Astro Documentation](https://docs.astro.build/en/getting-started) - Clear and concise reference that helped me understand project structure and content collections.
+- [🔤 Google Fonts](https://fonts.google.com) - Used to download the Inter variable font (TTF format) for local hosting.
+- [🖼 Squoosh](https://squoosh.app) - A powerful image compression tool used to convert images to WebP and reduce file sizes.
+
+## Author
+
+- Website - [Gaurav Shukla](https://heygauravshukla.netlify.app)
+- X - [@heygauravshukla](https://www.x.com/heygauravshukla)
