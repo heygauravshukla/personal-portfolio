@@ -1,6 +1,6 @@
-# Personal Portfolio
+# Personal Website
 
-This is my personal portfolio website built with Astro, Open Props, and a lot of hard work, designed to showcase my technical skills and development journey.
+This is my personal website built with Astro, Open Props, and a lot of hard work — crafted to showcase my projects, technical skills, and ongoing journey as a developer.
 
 ## Table of contents
 
@@ -28,11 +28,11 @@ This portfolio aims to deliver a seamless and accessible user experience. Key ch
 
 ### Screenshot
 
-![Desktop preview of Personal Portfolio](/public/projects/preview-personal-portfolio.webp)
+![Preview of Personal Website](/public/projects/preview-personal-website.webp)
 
 ### Links
 
-- Source Code: [https://github.com/heygauravshukla/personal-portfolio](https://github.com/heygauravshukla/personal-portfolio)
+- Source Code: [https://github.com/heygauravshukla/personal-website](https://github.com/heygauravshukla/personal-website)
 - Live Site URL: [https://heygauravshukla.netlify.app](https://heygauravshukla.netlify.app)
 
 ## My process
