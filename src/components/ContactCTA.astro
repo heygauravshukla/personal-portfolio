@@ -29,9 +29,10 @@
 
   a {
     width: fit-content;
+    font-size: var(--font-size-fluid-0);
   }
 
-  @media (width > 640px) {
+  @container (min-width: 640px) {
     .wrapper {
       flex-direction: row;
       align-items: center;
@@ -39,14 +40,10 @@
     }
   }
 
-  @media (width > 1180px) {
+  @container (min-width: 1180px) {
     .wrapper {
       padding-inline: var(--size-8);
       border-radius: var(--radius-3);
-    }
-
-    a {
-      font-size: var(--font-size-1);
     }
   }
 </style>
