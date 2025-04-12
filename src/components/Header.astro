@@ -62,8 +62,8 @@ export const links: link[] = [
       <ul class="menu">
         {
           links.map((link) => (
-            <li class="item">
-              <a href={link.url} class="link" aria-controls="primary-nav">
+            <li>
+              <a href={link.url} aria-controls="primary-nav">
                 {link.name}
               </a>
             </li>
@@ -76,6 +76,8 @@ export const links: link[] = [
 
 <style>
   header {
+    container-type: inline-size;
+
     position: sticky;
     top: 0;
     z-index: var(--layer-1);
@@ -106,15 +108,10 @@ export const links: link[] = [
     }
   }
 
-  .logo {
-    text-decoration: none;
-    color: var(--text-1);
-
-    > img {
-      width: var(--size-7);
-      height: auto;
-      border-radius: var(--radius-round);
-    }
+  .logo img {
+    width: var(--size-7);
+    height: auto;
+    border-radius: var(--radius-round);
   }
 
   .menu-opener,
@@ -125,7 +122,6 @@ export const links: link[] = [
 
   .menu {
     counter-reset: link-count;
-
     list-style: none;
     padding: 0;
     margin: 0;
@@ -135,11 +131,11 @@ export const links: link[] = [
     gap: var(--size-7);
   }
 
-  .menu .item {
+  .menu li {
     counter-increment: link-count;
   }
 
-  .menu .item .link {
+  .menu li a {
     text-decoration: none;
     color: currentColor;
 
@@ -160,7 +156,7 @@ export const links: link[] = [
     }
   }
 
-  @media (width < 640px) {
+  @container (max-width: 640px) {
     body.stop-scrolling {
       overflow: hidden;
     }
@@ -218,7 +214,7 @@ export const links: link[] = [
       display: grid;
       gap: var(--size-5);
 
-      & .link {
+      & a {
         font-size: var(--font-size-3);
       }
     }
