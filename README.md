@@ -72,6 +72,7 @@ Planned improvements include:
 - [📺 Kevin Powell – Building a website with Astro](https://youtu.be/Thudicbgqtg?si=TCu1qbhV5ZIcaZvG) - Helpful walkthrough of Astro’s fundamentals and project setup.
 - [📘 Astro Documentation](https://docs.astro.build/en/getting-started) - Clear and concise reference that helped me understand project structure and content collections.
 - [🔤 Google Fonts](https://fonts.google.com) - Used to download the Inter variable font (TTF format) for local hosting.
+- [⭐ Font Awesome](https://fontawesome.com/icons) - Used to download and locally serve SVG icon files for buttons and UI components.
 - [🖼 Squoosh](https://squoosh.app) - A powerful image compression tool used to convert images to WebP and reduce file sizes.
 
 ## Author
