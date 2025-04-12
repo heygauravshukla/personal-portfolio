@@ -40,9 +40,11 @@ export const skills: string[] = [
     list-style: none;
     padding: 0;
     margin: 0;
+
+    gap: var(--size-fluid-3);
   }
 
-  ul > * {
+  li {
     padding: var(--size-fluid-3);
     border: var(--border-size-1) solid var(--surface-3);
     border-radius: var(--radius-drawn-6);
@@ -50,17 +52,5 @@ export const skills: string[] = [
     text-wrap: nowrap;
     text-align: center;
     text-transform: uppercase;
-  }
-
-  @media (width > 640px) {
-    ul {
-      gap: var(--size-5);
-    }
-  }
-
-  @media (width > 1024px) {
-    ul {
-      gap: var(--size-6);
-    }
   }
 </style>
