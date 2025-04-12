@@ -87,7 +87,7 @@ const { Content } = await render(project);
     gap: var(--size-6);
   }
 
-  button {
+  button[title="Go back"] {
     cursor: pointer;
     width: var(--size-8);
     height: var(--size-8);
@@ -103,8 +103,9 @@ const { Content } = await render(project);
   }
 
   article {
-    max-width: 70ch;
+    max-width: var(--size-content-4);
     margin-inline: auto;
+
     display: grid;
     gap: var(--size-4);
   }
