@@ -59,12 +59,12 @@ textarea:not([rows]) {
   --brand: var(--green-10);
   --link: var(--indigo-7);
   --link-visited: var(--purple-7);
-  --text-1: var(--gray-12);
-  --text-2: var(--gray-7);
+  --text-1: var(--gray-9);
+  --text-2: var(--gray-8);
   --surface-1: var(--gray-0);
-  --surface-2: var(--gray-2);
-  --surface-3: var(--gray-3);
-  --surface-4: var(--gray-4);
+  --surface-2: var(--gray-1);
+  --surface-3: var(--gray-2);
+  --surface-4: var(--gray-3);
   --scrollthumb-color: var(--gray-7);
 
   --font-brand: "Inter", sans-serif;
@@ -78,12 +78,12 @@ textarea:not([rows]) {
     --brand: var(--green-5);
     --link: var(--indigo-3);
     --link-visited: var(--purple-3);
-    --text-1: var(--gray-1);
+    --text-1: var(--gray-2);
     --text-2: var(--gray-4);
-    --surface-1: var(--gray-9);
-    --surface-2: var(--gray-8);
-    --surface-3: var(--gray-7);
-    --surface-4: var(--gray-6);
+    --surface-1: var(--gray-10);
+    --surface-2: var(--gray-9);
+    --surface-3: var(--gray-8);
+    --surface-4: var(--gray-7);
     --scrollthumb-color: var(--gray-6);
     --shadow-strength: 10%;
     --shadow-color: 220 40% 2%;
