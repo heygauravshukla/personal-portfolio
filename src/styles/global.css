@@ -5,60 +5,13 @@
   font-display: swap;
 }
 
-html {
-  --brand: var(--green-10);
-  --link: var(--indigo-7);
-  --link-visited: var(--purple-7);
-  --text-1: var(--gray-12);
-  --text-2: var(--gray-7);
-  --surface-1: var(--gray-0);
-  --surface-2: var(--gray-2);
-  --surface-3: var(--gray-3);
-  --surface-4: var(--gray-4);
-  --scrollthumb-color: var(--gray-7);
-
-  --font-brand: "Inter", sans-serif;
-
-  -webkit-text-size-adjust: none;
-
-  block-size: 100%;
-  accent-color: var(--brand, var(--link));
-  caret-color: var(--brand, var(--link));
-  background-color: var(--surface-1);
-  color: var(--text-2);
-  color-scheme: light;
-  font-family: var(--font-brand);
-  line-height: var(--font-lineheight-3);
-  scrollbar-color: var(--scrollthumb-color) transparent;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    --brand: var(--green-5);
-    --link: var(--indigo-3);
-    --link-visited: var(--purple-3);
-    --text-1: var(--gray-1);
-    --text-2: var(--gray-4);
-    --surface-1: var(--gray-9);
-    --surface-2: var(--gray-8);
-    --surface-3: var(--gray-7);
-    --surface-4: var(--gray-6);
-    --scrollthumb-color: var(--gray-6);
-    --shadow-strength: 10%;
-    --shadow-color: 220 40% 2%;
-    color-scheme: dark;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
+/* --------------------- */
+/* 1. Base Reset         */
+/* --------------------- */
 
 *,
-:after,
-:before {
+::before,
+::after {
   box-sizing: border-box;
 }
 
@@ -79,6 +32,98 @@ ul[role="list"],
 ol[role="list"] {
   list-style: none;
 }
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* --------------------- */
+/* 2. Root Variables     */
+/* --------------------- */
+
+:root {
+  --brand: var(--green-10);
+  --link: var(--indigo-7);
+  --link-visited: var(--purple-7);
+  --text-1: var(--gray-12);
+  --text-2: var(--gray-7);
+  --surface-1: var(--gray-0);
+  --surface-2: var(--gray-2);
+  --surface-3: var(--gray-3);
+  --surface-4: var(--gray-4);
+  --scrollthumb-color: var(--gray-7);
+
+  --font-brand: "Inter", sans-serif;
+
+  --size-content-4: 70ch;
+}
+
+/* Dark theme overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: var(--green-5);
+    --link: var(--indigo-3);
+    --link-visited: var(--purple-3);
+    --text-1: var(--gray-1);
+    --text-2: var(--gray-4);
+    --surface-1: var(--gray-9);
+    --surface-2: var(--gray-8);
+    --surface-3: var(--gray-7);
+    --surface-4: var(--gray-6);
+    --scrollthumb-color: var(--gray-6);
+    --shadow-strength: 10%;
+    --shadow-color: 220 40% 2%;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* --------------------- */
+/* 3. Structural Elements */
+/* --------------------- */
+
+html {
+  -webkit-text-size-adjust: none;
+  color-scheme: light;
+
+  accent-color: var(--brand, var(--link));
+  caret-color: var(--brand, var(--link));
+  scrollbar-color: var(--scrollthumb-color) transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background-color: var(--surface-1);
+  color: var(--text-2);
+
+  font-family: var(--font-brand);
+  line-height: var(--font-lineheight-3);
+}
+
+/* --------------------- */
+/* 4. Typography         */
+/* --------------------- */
 
 h1,
 h2,
@@ -101,9 +146,13 @@ h4 {
 
 p,
 li {
-  max-width: 65ch;
+  max-width: var(--size-content-4);
   text-wrap: pretty;
 }
+
+/* --------------------- */
+/* 5. Links & Focus      */
+/* --------------------- */
 
 a {
   color: var(--brand, var(--link));
@@ -127,23 +176,18 @@ a {
   }
 }
 
-img,
-picture {
-  max-width: 100%;
-  display: block;
+:focus-visible {
+  outline: 2px solid var(--brand, var(--link));
 }
 
-input,
-button,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
+::selection {
+  background-color: var(--brand);
+  color: var(--surface-1);
 }
 
-textarea:not([rows]) {
-  min-height: 10em;
-}
+/* --------------------- */
+/* 6. Layout Utilities   */
+/* --------------------- */
 
 main,
 section {
@@ -154,39 +198,10 @@ section {
   scroll-margin-block: 5ex;
 }
 
-:focus-visible {
-  outline-color: var(--brand, var(--link));
-}
-
-::selection {
-  background-color: var(--brand);
-  color: var(--surface-1);
-}
-
-.icon {
-  fill: var(--text-2);
-  width: var(--size-3);
-  height: auto;
-}
-
 .wrapper {
   max-inline-size: 1180px;
   margin-inline: auto;
   padding-inline: var(--size-3);
-}
-
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.brand-color {
-  color: var(--brand);
 }
 
 .flow > * + * {
@@ -218,6 +233,10 @@ section {
   margin-block-end: var(--size-8);
 }
 
+/* --------------------- */
+/* 7. UI Components      */
+/* --------------------- */
+
 .button {
   --btn-background-color: var(--surface-2);
   --btn-color: var(--text-1);
@@ -226,7 +245,7 @@ section {
   text-decoration: none;
   border: 0;
 
-  display: inline flex;
+  display: inline-flex;
   background-color: var(--btn-background-color);
   color: var(--btn-color);
   padding: 1em 2em;
@@ -242,18 +261,42 @@ section {
     color: var(--btn-color);
   }
 
+  &.primary {
+    --btn-background-color: var(--brand);
+    --btn-color: var(--surface-1);
+  }
+
   &:hover,
   &:focus-visible {
     opacity: 0.75;
   }
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 }
 
-.button.primary {
-  --btn-background-color: var(--brand);
-  --btn-color: var(--surface-1);
+.icon {
+  fill: var(--text-2);
+  width: var(--size-3);
+  height: auto;
 }
 
-.button[disabled] {
-  pointer-events: none;
-  opacity: 0.5;
+/* --------------------- */
+/* 8. Visual Helpers     */
+/* --------------------- */
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.brand-color {
+  color: var(--brand);
 }
