@@ -40,36 +40,34 @@ export const links: Link[] = [
 
 <section>
   <div class="wrapper">
-    <div class="intro">
-      <img src={AvatarImage.src} alt="Gaurav Shukla" width="64" height="64" />
-      <h1>
-        <span class="visually-hidden">Gaurav Shukla</span>
-        Frontend developer, creator, and tech enthusiast.
-      </h1>
-      <p>
-        I’m Gaurav, a frontend developer and innovator based in India. I build
-        modern, user-focused web experiences with tools like React and Next.js,
-        passionate about creating solutions that blend design and technology
-        seamlessly.
-      </p>
-      <ul class="social-links">
-        {
-          links.map((link) => {
-            const Icon = link.icon;
-            return (
-              <li>
-                <a href={link.url} target="_blank" rel="noopener noreferrer">
-                  {Icon && <Icon class="icon" />}
-                  <span class="visually-hidden">
-                    Visit my {link.name} profile
-                  </span>
-                </a>
-              </li>
-            );
-          })
-        }
-      </ul>
-    </div>
+    <img src={AvatarImage.src} alt="Gaurav Shukla" width="64" height="64" />
+    <h1>
+      <span class="visually-hidden">Gaurav Shukla</span>
+      Frontend developer, creator, and tech enthusiast.
+    </h1>
+    <p>
+      I’m Gaurav, a frontend developer and innovator based in India. I build
+      modern, user-focused web experiences with tools like React and Next.js,
+      passionate about creating solutions that blend design and technology
+      seamlessly.
+    </p>
+    <ul>
+      {
+        links.map((link) => {
+          const Icon = link.icon;
+          return (
+            <li>
+              <a href={link.url} target="_blank" rel="noopener noreferrer">
+                {Icon && <Icon class="icon" />}
+                <span class="visually-hidden">
+                  Visit my {link.name} profile
+                </span>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
   </div>
 </section>
 
@@ -78,40 +76,41 @@ export const links: Link[] = [
     padding-block: var(--size-fluid-5);
   }
 
-  .intro {
+  .wrapper {
     display: grid;
     gap: var(--size-4);
   }
 
-  a {
-    display: inline;
-  }
-
   img {
-    margin-bottom: var(--size-2);
     border-radius: var(--radius-round);
+    margin-bottom: var(--size-2);
   }
 
   h1 {
-    max-width: 20ch;
+    max-width: var(--size-header-1);
     text-wrap: unset;
     font-size: var(--font-size-fluid-3);
     line-height: var(--font-lineheight-1);
   }
 
   p {
-    max-width: 70ch;
+    max-width: var(--size-content-4);
     line-height: var(--font-lineheight-4);
   }
 
-  .social-links {
+  ul {
     list-style: none;
     padding: 0;
     margin-block-start: var(--size-2);
+    margin-block-end: 0;
 
     display: flex;
     gap: var(--size-5);
     align-items: center;
+  }
+
+  ul li a {
+    display: grid;
   }
 
   .icon {
