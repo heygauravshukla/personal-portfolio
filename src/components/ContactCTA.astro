@@ -1,8 +1,12 @@
+---
+import EnvelopeIcon from "../assets/icons/envelope-solid.svg";
+---
+
 <section>
   <div class="wrapper">
     <h2>Interested in working together?</h2>
     <a href="mailto:heygauravshukla@gmail.com" class="button primary"
-      >Send me a message</a
+      ><EnvelopeIcon class="icon" /> Send me a message</a
     >
   </div>
 </section>
@@ -29,7 +33,16 @@
 
   a {
     width: fit-content;
+
+    display: flex;
+    align-items: center;
+    gap: var(--size-2);
+
     font-size: var(--font-size-fluid-0);
+  }
+
+  .icon {
+    fill: inherit;
   }
 
   @container (min-width: 640px) {
@@ -37,6 +50,14 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+    }
+
+    a {
+      gap: var(--size-3);
+    }
+
+    .icon {
+      width: var(--size-4);
     }
   }
 
