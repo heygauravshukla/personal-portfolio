@@ -185,6 +185,21 @@ a {
   color: var(--surface-1);
 }
 
+@view-transition {
+  navigation: auto;
+}
+
+/* transitions the whole page (root) */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) {
+    animation: var(--animation-slide-out-down) forwards;
+  }
+
+  ::view-transition-new(root) {
+    animation: var(--animation-slide-in-up) forwards;
+  }
+}
+
 /* --------------------- */
 /* 6. Layout Utilities   */
 /* --------------------- */
