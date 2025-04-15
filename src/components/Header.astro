@@ -1,41 +1,39 @@
 ---
-import AvatarImage from "../assets/gaurav-shukla.webp";
+import AvatarImage from '../assets/gaurav-shukla.webp'
 
-import BarsIcon from "../assets/icons/bars-solid.svg";
-import XMarkIcon from "../assets/icons/xmark-solid.svg";
+import BarsIcon from '../assets/icons/bars-solid.svg'
+import XMarkIcon from '../assets/icons/xmark-solid.svg'
 
 export interface link {
-  name: string;
-  url: string;
+  name: string
+  url: string
 }
 
 export const links: link[] = [
-  { name: "Home", url: "/" },
-  { name: "Skills", url: "/#skills" },
-  { name: "Projects", url: "/projects" },
-  { name: "Contact", url: "mailto:heygauravshukla@gmail.com" },
-];
+  { name: 'Home', url: '/' },
+  { name: 'Skills', url: '/#skills' },
+  { name: 'Projects', url: '/projects' },
+  { name: 'Contact', url: 'mailto:heygauravshukla@gmail.com' },
+]
 ---
 
 <script>
-  const navTogglers = document.querySelectorAll(
-    '[aria-controls="primary-nav"]'
-  );
-  const nav = document.querySelector("#primary-nav");
+  const navTogglers = document.querySelectorAll('[aria-controls="primary-nav"]')
+  const nav = document.querySelector('#primary-nav')
 
   navTogglers.forEach((navToggler) => {
-    navToggler.addEventListener("click", () => {
+    navToggler.addEventListener('click', () => {
       if (window.innerWidth < 640) {
-        const isActive = nav?.classList.toggle("active");
+        const isActive = nav?.classList.toggle('active')
 
-        document.body.classList.toggle("stop-scrolling");
+        document.body.classList.toggle('stop-scrolling')
 
         navTogglers.forEach((toggler) => {
-          toggler.setAttribute("aria-expanded", isActive ? "true" : "false");
-        });
+          toggler.setAttribute('aria-expanded', isActive ? 'true' : 'false')
+        })
       }
-    });
-  });
+    })
+  })
 </script>
 
 <header>
@@ -172,11 +170,11 @@ export const links: link[] = [
       display: block;
     }
 
-    .menu-opener[aria-expanded="true"] {
+    .menu-opener[aria-expanded='true'] {
       display: none;
     }
 
-    .overlay[aria-expanded="true"] {
+    .overlay[aria-expanded='true'] {
       display: block;
 
       position: fixed;
@@ -205,7 +203,7 @@ export const links: link[] = [
       padding: var(--size-4) var(--size-3);
     }
 
-    .menu-closer[aria-expanded="true"] {
+    .menu-closer[aria-expanded='true'] {
       display: block;
       align-self: self-end;
     }
