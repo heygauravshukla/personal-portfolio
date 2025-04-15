@@ -185,6 +185,10 @@ a {
   color: var(--surface-1);
 }
 
+:target {
+  scroll-margin-block: 5ex;
+}
+
 @view-transition {
   navigation: auto;
 }
@@ -207,10 +211,6 @@ a {
 main,
 section {
   container-type: inline-size;
-}
-
-:target {
-  scroll-margin-block: 5ex;
 }
 
 .wrapper {
