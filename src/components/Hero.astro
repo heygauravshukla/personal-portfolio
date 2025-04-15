@@ -1,38 +1,27 @@
 ---
-import AvatarImage from '../assets/gaurav-shukla.webp'
-
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js'
 
+import AvatarImage from '../assets/gaurav-shukla.webp'
 import GitHubIcon from '../assets/icons/github-brands.svg'
-import XIcon from '../assets/icons/x-twitter-brands.svg'
 import LinkedInIcon from '../assets/icons/linkedin-brands.svg'
+import XIcon from '../assets/icons/x-twitter-brands.svg'
 import InstagramIcon from '../assets/icons/instagram-brands.svg'
 
-export interface Link {
-  name: string
-  url: string
-  icon?: AstroComponentFactory
-}
-
-export const links: Link[] = [
+const links: { label: string; href: string; icon?: AstroComponentFactory }[] = [
   {
-    name: 'GitHub',
-    url: 'https://github.com/heygauravshukla',
+    label: 'GitHub',
+    href: 'https://github.com/heygauravshukla',
     icon: GitHubIcon,
   },
   {
-    name: 'LinkedIn',
-    url: 'https://linkedin.com/in/heygauravshukla',
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/in/heygauravshukla',
     icon: LinkedInIcon,
   },
+  { label: 'X', href: 'https://x.com/heygauravshukla', icon: XIcon },
   {
-    name: 'X',
-    url: 'https://x.com/heygauravshukla',
-    icon: XIcon,
-  },
-  {
-    name: 'Instagram',
-    url: 'https://instagram.com/heygauravshukla',
+    label: 'Instagram',
+    href: 'https://instagram.com/heygauravshukla',
     icon: InstagramIcon,
   },
 ]
@@ -57,10 +46,10 @@ export const links: Link[] = [
           const Icon = link.icon
           return (
             <li>
-              <a href={link.url} target="_blank" rel="noopener noreferrer">
+              <a href={link.href} target="_blank" rel="noopener noreferrer">
                 {Icon && <Icon class="icon" />}
                 <span class="visually-hidden">
-                  Visit my {link.name} profile
+                  Visit my {link.label} profile
                 </span>
               </a>
             </li>
