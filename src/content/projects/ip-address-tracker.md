@@ -1,7 +1,7 @@
 ---
 title: IP Address Tracker
 publishDate: 2025-01-10 20:22:00
-img: /projects/preview-ip-address-tracker.webp
+img: /images/preview-ip-address-tracker.webp
 img_alt: Preview of IP Adress Tracker
 description: |
   An IP Address Tracker that retrieves geographical location and other details (such as ISP, city, and country) for any IP address, displaying the results on an interactive map.

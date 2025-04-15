@@ -28,7 +28,7 @@ This portfolio aims to deliver a seamless and accessible user experience. Key ch
 
 ### Screenshot
 
-![Preview of Personal Website](/public/projects/preview-personal-website.webp)
+![Preview of Personal Website](/public/images/preview-personal-website.webp)
 
 ### Links
 

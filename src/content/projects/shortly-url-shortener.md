@@ -1,7 +1,7 @@
 ---
 title: Shortly - URL Shortener
 publishDate: 2025-02-06 22:03:00
-img: /projects/preview-shortly-url-shortener.webp
+img: /images/preview-shortly-url-shortener.webp
 img_alt: Preview of Shortly - URL Shortener
 description: |
   A URL shortener web application designed to quickly convert lengthy URLs into shareable short links. It includes a copy-to-clipboard button for easy sharing and stores shortened links in the browser’s localStorage for quick access across sessions.

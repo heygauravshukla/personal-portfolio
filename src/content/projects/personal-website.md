@@ -1,7 +1,7 @@
 ---
 title: Personal Website
 publishDate: 2025-04-11 12:02:00
-img: /projects/preview-personal-website.webp
+img: /images/preview-personal-website.webp
 img_alt: Preview of Personal Website
 description: |
   A personal website to showcase projects and technical expertise. Fully responsive and accessible, with light/dark mode support.
