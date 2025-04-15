@@ -163,15 +163,16 @@ a {
 }
 
 :where(h1, h2, h3, h4) > a {
-  color: currentColor;
+  color: inherit;
   text-decoration: none;
 
+  transition: color 250ms;
+
   &:visited {
-    color: currentColor;
+    color: inherit;
   }
 
-  &:hover,
-  &:focus-visible {
+  &:hover {
     color: var(--brand, var(--link));
   }
 }
