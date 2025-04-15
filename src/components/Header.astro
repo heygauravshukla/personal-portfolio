@@ -1,19 +1,12 @@
 ---
 import AvatarImage from '../assets/gaurav-shukla.webp'
-
 import BarsIcon from '../assets/icons/bars-solid.svg'
 import XMarkIcon from '../assets/icons/xmark-solid.svg'
 
-export interface link {
-  name: string
-  url: string
-}
-
-export const links: link[] = [
-  { name: 'Home', url: '/' },
-  { name: 'Skills', url: '/#skills' },
-  { name: 'Projects', url: '/projects' },
-  { name: 'Contact', url: 'mailto:heygauravshukla@gmail.com' },
+const links: { label: string; href: string }[] = [
+  { label: 'Home', href: '/' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Contact', href: 'mailto:heygauravshukla@gmail.com' },
 ]
 ---
 
@@ -61,8 +54,8 @@ export const links: link[] = [
         {
           links.map((link) => (
             <li>
-              <a href={link.url} aria-controls="primary-nav">
-                {link.name}
+              <a href={link.href} aria-controls="primary-nav">
+                {link.label}
               </a>
             </li>
           ))
