@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content'
-import BaseLayout from '../../layouts/BaseLayout.astro'
+import Layout from '../../layouts/Layout.astro'
 import ArrowLeftIcon from '../../assets/icons/arrow-left-solid.svg'
 
 export async function getStaticPaths() {
@@ -15,7 +15,7 @@ const { project } = Astro.props
 const { Content } = await render(project)
 ---
 
-<BaseLayout title={project.data.title} description={project.data.description}>
+<Layout title={project.data.title} description={project.data.description}>
   <div class="wrapper">
     <button onclick="history.back()" title="Go back">
       <ArrowLeftIcon class="icon" />
@@ -78,7 +78,7 @@ const { Content } = await render(project)
       </main>
     </article>
   </div>
-</BaseLayout>
+</Layout>
 
 <style>
   .wrapper {
