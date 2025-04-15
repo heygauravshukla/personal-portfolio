@@ -10,25 +10,6 @@ const links: { label: string; href: string }[] = [
 ]
 ---
 
-<script>
-  const navTogglers = document.querySelectorAll('[aria-controls="primary-nav"]')
-  const nav = document.querySelector('#primary-nav')
-
-  navTogglers.forEach((navToggler) => {
-    navToggler.addEventListener('click', () => {
-      if (window.innerWidth < 640) {
-        const isActive = nav?.classList.toggle('active')
-
-        document.body.classList.toggle('stop-scrolling')
-
-        navTogglers.forEach((toggler) => {
-          toggler.setAttribute('aria-expanded', isActive ? 'true' : 'false')
-        })
-      }
-    })
-  })
-</script>
-
 <header>
   <div class="wrapper">
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
@@ -42,28 +23,44 @@ const links: { label: string; href: string }[] = [
       <BarsIcon class="icon" />
     </button>
 
-    <div class="overlay" aria-controls="primary-nav"></div>
-
-    <nav id="primary-nav">
+    <nav id="primary-nav" aria-expanded="false">
       <button class="menu-closer" aria-controls="primary-nav">
         <span class="visually-hidden">Close Menu</span>
         <XMarkIcon class="icon" />
       </button>
 
-      <ul class="menu">
+      <menu>
         {
           links.map((link) => (
             <li>
-              <a href={link.href} aria-controls="primary-nav">
-                {link.label}
-              </a>
+              <a href={link.href}>{link.label}</a>
             </li>
           ))
         }
-      </ul>
+      </menu>
     </nav>
   </div>
 </header>
+
+<script>
+  const nav = document.querySelector('#primary-nav')
+  const navTogglers = document.querySelectorAll('[aria-controls="primary-nav"]')
+
+  navTogglers.forEach((navToggler) => {
+    navToggler.addEventListener('click', () => {
+      const isOpen = nav?.getAttribute('aria-expanded') === 'true'
+      nav?.setAttribute('aria-expanded', String(!isOpen))
+      document.body.style.overflow = isOpen ? 'auto' : 'hidden'
+    })
+  })
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav?.getAttribute('aria-expanded') === 'true') {
+      nav.setAttribute('aria-expanded', 'false')
+      document.body.style.overflow = 'auto'
+    }
+  })
+</script>
 
 <style>
   header {
@@ -75,7 +72,7 @@ const links: { label: string; href: string }[] = [
 
     background-color: hsl(from var(--surface-1) h s l / 0.5);
     backdrop-filter: blur(8px);
-    padding-block: var(--size-fluid-2);
+    padding-block: var(--size-3);
     border-bottom: var(--border-size-1) solid var(--surface-3);
   }
 
@@ -87,15 +84,18 @@ const links: { label: string; href: string }[] = [
 
   .skip-to-main {
     position: absolute;
-    translate: -200%;
 
-    &:hover,
+    background-color: var(--brand);
+    color: var(--surface-1);
+    padding: 1em 3em;
+
+    font-weight: var(--font-weight-7);
+
+    translate: 0 -200%;
+    transition: translate 250ms;
+
     &:focus-visible {
-      translate: 0;
-      background-color: var(--brand);
-      color: var(--surface-1);
-      padding: 1em 3em;
-      font-weight: var(--font-weight-7);
+      translate: 0 0;
     }
   }
 
@@ -106,108 +106,82 @@ const links: { label: string; href: string }[] = [
   }
 
   .menu-opener,
-  .overlay,
   .menu-closer {
     display: none;
   }
 
-  .menu {
-    counter-reset: link-count;
+  menu {
     list-style: none;
     padding: 0;
     margin: 0;
 
     display: flex;
     align-items: center;
-    gap: var(--size-7);
+    gap: var(--size-8);
   }
 
-  .menu li {
-    counter-increment: link-count;
-  }
-
-  .menu li a {
+  menu a {
     text-decoration: none;
     color: currentColor;
 
-    display: flex;
-    align-items: center;
-    gap: var(--size-2);
     font-family: var(--font-industrial);
     text-transform: uppercase;
 
-    &::before {
-      content: counter(link-count, decimal-leading-zero);
-      font-weight: var(--font-weight-9);
-    }
+    transition: color 250ms;
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       color: var(--brand);
     }
   }
 
   @container (max-width: 640px) {
-    body.stop-scrolling {
-      overflow: hidden;
-    }
-
     .menu-opener,
     .menu-closer {
+      display: block;
       background-color: transparent;
       padding: 0;
       border: 0;
     }
 
-    .menu-opener {
-      display: block;
-    }
+    nav {
+      translate: 0 -200%;
+      visibility: hidden;
 
-    .menu-opener[aria-expanded='true'] {
-      display: none;
-    }
-
-    .overlay[aria-expanded='true'] {
-      display: block;
+      display: grid;
+      grid-template-rows: auto 1fr;
 
       position: fixed;
       inset: 0;
-      z-index: var(--layer-4);
-
-      height: 100dvh;
-      background-color: hsla(0, 0%, 0%, 0.4);
-    }
-
-    nav {
-      display: none;
-    }
-
-    nav.active {
-      display: flex;
-      flex-direction: column;
-      gap: var(--size-11);
-
-      position: fixed;
-      inset: 0 0 0 30%;
       z-index: var(--layer-5);
 
-      background-color: var(--surface-1);
       height: 100dvh;
+      background-color: var(--surface-1);
       padding: var(--size-4) var(--size-3);
+
+      transition: all 300ms;
     }
 
-    .menu-closer[aria-expanded='true'] {
-      display: block;
-      align-self: self-end;
+    nav[aria-expanded='true'] {
+      translate: 0 0;
+      visibility: visible;
     }
 
-    nav.active .menu {
+    .menu-closer {
+      justify-self: end;
+    }
+
+    menu {
       display: grid;
       gap: var(--size-5);
+      place-content: center;
+    }
 
-      & a {
-        font-size: var(--font-size-3);
-      }
+    menu li {
+      text-align: center;
+    }
+
+    menu a {
+      font-size: var(--font-size-3);
     }
   }
 </style>
