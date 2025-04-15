@@ -98,15 +98,15 @@ const links: { label: string; href: string; icon?: AstroComponentFactory }[] = [
     align-items: center;
   }
 
-  ul li a {
+  ul a {
     display: grid;
   }
 
   .icon {
     width: var(--size-4);
+    transition: fill 250ms;
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       fill: var(--brand);
     }
   }
