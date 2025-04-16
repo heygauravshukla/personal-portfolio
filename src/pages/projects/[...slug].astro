@@ -16,77 +16,69 @@ const { Content } = await render(project)
 ---
 
 <Layout title={project.data.title} description={project.data.description}>
-  <div class="wrapper">
-    <button onclick="history.back()" title="Go back">
-      <ArrowLeftIcon class="icon" />
-      <span class="visually-hidden">Go back</span>
-    </button>
+  <button onclick="history.back()" title="Go back">
+    <ArrowLeftIcon class="icon" />
+    <span class="visually-hidden">Go back</span>
+  </button>
 
-    <article>
-      <header class="flow">
-        <time datetime={new Date(project.data.publishDate).toISOString()}>
-          {
-            new Date(project.data.publishDate).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })
-          }
-        </time>
-        <h1>{project.data.title}</h1>
-        <ul class="tags">
-          {project.data.tags.map((tag) => <li>{tag}</li>)}
-        </ul>
-        <p>{project.data.description}</p>
-        <img
-          class="project-img"
-          src={project.data.img}
-          alt={project.data.img_alt ?? `Preview image of ${project.data.title}`}
-          width="750"
-          height="550"
-        />
-        <div class="button-group">
-          {
-            project.data.live_site_url && (
-              <a
-                class="button primary"
-                href={project.data.live_site_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Live Site
-              </a>
-            )
-          }
-          {
-            project.data.source_code_url && (
-              <a
-                class="button"
-                href={project.data.source_code_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Source Code
-              </a>
-            )
-          }
-        </div>
-      </header>
+  <article class="flow">
+    <header class="flow">
+      <time datetime={new Date(project.data.publishDate).toISOString()}>
+        {
+          new Date(project.data.publishDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })
+        }
+      </time>
+      <h1>{project.data.title}</h1>
+      <ul class="tags">
+        {project.data.tags.map((tag) => <li>{tag}</li>)}
+      </ul>
+      <p>{project.data.description}</p>
+      <img
+        class="project-img"
+        src={project.data.img}
+        alt={project.data.img_alt ?? `Preview image of ${project.data.title}`}
+        width="750"
+        height="550"
+      />
+      <div class="button-group">
+        {
+          project.data.live_site_url && (
+            <a
+              class="button primary"
+              href={project.data.live_site_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Live Site
+            </a>
+          )
+        }
+        {
+          project.data.source_code_url && (
+            <a
+              class="button"
+              href={project.data.source_code_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source Code
+            </a>
+          )
+        }
+      </div>
+    </header>
 
-      <main class="flow">
-        <Content />
-      </main>
-    </article>
-  </div>
+    <main class="content flow">
+      <Content />
+    </main>
+  </article>
 </Layout>
 
 <style>
-  .wrapper {
-    padding-block-start: var(--size-fluid-5);
-    display: grid;
-    gap: var(--size-6);
-  }
-
   button[title='Go back'] {
     cursor: pointer;
     width: var(--size-8);
@@ -94,20 +86,22 @@ const { Content } = await render(project)
     background-color: transparent;
     border: var(--border-size-1) solid var(--surface-3);
     border-radius: var(--radius-round);
+    margin-block: var(--size-fluid-5) var(--size-fluid-4);
     transition: background-color 0.2s ease-in-out;
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       background-color: var(--surface-2);
     }
   }
 
   article {
+    --_flow-space: var(--size-6);
     max-width: var(--size-content-4);
     margin-inline: auto;
+  }
 
-    display: grid;
-    gap: var(--size-4);
+  header {
+    --_flow-space: var(--size-4);
   }
 
   time {
@@ -152,5 +146,9 @@ const { Content } = await render(project)
     flex-wrap: wrap;
     align-items: center;
     gap: var(--size-2);
+  }
+
+  .content {
+    --_flow-space: var(--size-5);
   }
 </style>

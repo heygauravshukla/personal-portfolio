@@ -27,52 +27,40 @@ const links: { label: string; href: string; icon?: AstroComponentFactory }[] = [
 ]
 ---
 
-<section>
-  <div class="wrapper">
-    <img src={AvatarImage.src} alt="Gaurav Shukla" width="64" height="64" />
-    <h1>
-      <span class="visually-hidden">Gaurav Shukla</span>
-      Frontend developer, creator, and tech enthusiast.
-    </h1>
-    <p>
-      I’m Gaurav, a frontend developer and innovator based in India. I build
-      modern, user-focused web experiences with tools like React and Next.js,
-      passionate about creating solutions that blend design and technology
-      seamlessly.
-    </p>
-    <ul>
-      {
-        links.map((link) => {
-          const Icon = link.icon
-          return (
-            <li>
-              <a href={link.href} target="_blank" rel="noopener noreferrer">
-                {Icon && <Icon class="icon" />}
-                <span class="visually-hidden">
-                  Visit my {link.label} profile
-                </span>
-              </a>
-            </li>
-          )
-        })
-      }
-    </ul>
-  </div>
+<section class="section flow">
+  <img src={AvatarImage.src} alt="Gaurav Shukla" width="64" height="64" />
+  <h1>
+    <span class="visually-hidden">Gaurav Shukla</span>
+    Frontend developer, creator, and tech enthusiast.
+  </h1>
+  <p>
+    I’m Gaurav, a frontend developer and innovator based in India. I build
+    modern, user-focused web experiences with tools like React and Next.js,
+    passionate about creating solutions that blend design and technology
+    seamlessly.
+  </p>
+  <ul>
+    {
+      links.map((link) => {
+        const Icon = link.icon
+        return (
+          <li>
+            <a href={link.href} target="_blank" rel="noopener noreferrer">
+              {Icon && <Icon class="icon" />}
+              <span class="visually-hidden">Visit my {link.label} profile</span>
+            </a>
+          </li>
+        )
+      })
+    }
+  </ul>
 </section>
 
 <style>
-  section {
-    padding-block: var(--size-fluid-5);
-  }
-
-  .wrapper {
-    display: grid;
-    gap: var(--size-4);
-  }
-
   img {
+    display: inline-block;
+    margin-block-end: var(--size-2);
     border-radius: var(--radius-round);
-    margin-bottom: var(--size-2);
   }
 
   h1 {
@@ -90,7 +78,7 @@ const links: { label: string; href: string; icon?: AstroComponentFactory }[] = [
   ul {
     list-style: none;
     padding: 0;
-    margin-block-start: var(--size-2);
+    padding-block-start: var(--size-2);
     margin-block-end: 0;
 
     display: flex;

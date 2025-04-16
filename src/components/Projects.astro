@@ -18,49 +18,38 @@ if (limit) {
 }
 ---
 
-<section>
-  <div class="wrapper">
-    <h2>Projects</h2>
-    <ul class="auto-grid">
-      {
-        projects.map((project) => (
-          <li>
-            <a
-              href={`/projects/${project.id}`}
-              aria-hidden="true"
-              tabindex="-1"
-            >
-              <img
-                src={project.data.img}
-                alt={
-                  project.data.img_alt ?? `Screenshot of ${project.data.title}`
-                }
-                width="362"
-                height="265"
-                loading="lazy"
-              />
-            </a>
-            <div>
-              <h3>
-                <a href={`/projects/${project.id}`}>{project.data.title}</a>
-              </h3>
-              <p>{project.data.description}</p>
-            </div>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+<section class="section flow">
+  <h2>Projects</h2>
+  <ul class="auto-grid">
+    {
+      projects.map((project) => (
+        <li>
+          <a href={`/projects/${project.id}`} aria-hidden="true" tabindex="-1">
+            <img
+              src={project.data.img}
+              alt={
+                project.data.img_alt ?? `Screenshot of ${project.data.title}`
+              }
+              width="362"
+              height="265"
+              loading="lazy"
+            />
+          </a>
+          <div>
+            <h3>
+              <a href={`/projects/${project.id}`}>{project.data.title}</a>
+            </h3>
+            <p>{project.data.description}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
 </section>
 
 <style>
   section {
     padding-block: var(--size-fluid-5);
-  }
-
-  .wrapper {
-    display: grid;
-    gap: var(--size-6);
   }
 
   h2 {
@@ -70,7 +59,7 @@ if (limit) {
   ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin-block-end: 0;
     gap: var(--size-fluid-2);
   }
 

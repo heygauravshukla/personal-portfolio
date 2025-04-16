@@ -10,25 +10,21 @@ const links: { label: string; href: string }[] = [
 ]
 ---
 
-<header>
-  <div class="wrapper">
-    <a href="#main-content" class="skip-to-main">Skip to main content</a>
-
-    <a href="/" class="logo">
+<header class="content-grid">
+  <div class="space-between">
+    <a class="skip-to-main" href="#main-content">Skip to main content</a>
+    <a class="logo" href="/">
       <img src={AvatarImage.src} alt="Gaurav Shukla" width="24" height="24" />
     </a>
-
     <button class="menu-opener" aria-controls="primary-nav">
       <span class="visually-hidden">Open Menu</span>
       <BarsIcon class="icon" />
     </button>
-
     <nav id="primary-nav" aria-expanded="false">
       <button class="menu-closer" aria-controls="primary-nav">
         <span class="visually-hidden">Close Menu</span>
         <XMarkIcon class="icon" />
       </button>
-
       <menu>
         {
           links.map((link) => (
@@ -76,10 +72,8 @@ const links: { label: string; href: string }[] = [
     border-bottom: var(--border-size-1) solid var(--surface-3);
   }
 
-  .wrapper {
-    display: flex;
+  .space-between {
     align-items: center;
-    justify-content: space-between;
   }
 
   .skip-to-main {
