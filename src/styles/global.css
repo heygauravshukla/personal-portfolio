@@ -75,7 +75,7 @@
 
   html {
     -webkit-text-size-adjust: none;
-    color-scheme: light dark;
+    color-scheme: dark;
 
     accent-color: var(--brand, var(--link));
     caret-color: var(--brand, var(--link));
