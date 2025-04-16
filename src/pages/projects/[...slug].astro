@@ -86,7 +86,7 @@ const { Content } = await render(project)
     background-color: transparent;
     border: var(--border-size-1) solid var(--surface-3);
     border-radius: var(--radius-round);
-    margin-block: var(--size-fluid-5) var(--size-fluid-4);
+    margin-block-start: var(--size-fluid-5);
     transition: background-color 0.2s ease-in-out;
 
     &:hover {
@@ -98,6 +98,7 @@ const { Content } = await render(project)
     --_flow-space: var(--size-6);
     max-width: var(--size-content-4);
     margin-inline: auto;
+    margin-block: var(--size-fluid-4);
   }
 
   header {
