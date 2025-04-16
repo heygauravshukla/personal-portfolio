@@ -176,16 +176,16 @@
 
 @layer components {
   .button {
-    --btn-background-color: var(--surface-2);
-    --btn-color: var(--text-1);
+    --_btn-background-color: var(--surface-2);
+    --_btn-color: var(--text-1);
 
     cursor: pointer;
     text-decoration: none;
     border: 0;
 
     display: inline-flex;
-    background-color: var(--btn-background-color);
-    color: var(--btn-color);
+    background-color: var(--_btn-background-color);
+    color: var(--_btn-color);
     padding: 1em 2em;
     border-radius: var(--radius-round);
 
@@ -196,12 +196,12 @@
     text-transform: uppercase;
 
     &:visited {
-      color: var(--btn-color);
+      color: var(--_btn-color);
     }
 
     &.primary {
-      --btn-background-color: var(--brand);
-      --btn-color: var(--surface-1);
+      --_btn-background-color: var(--brand);
+      --_btn-color: var(--surface-1);
     }
 
     &:hover,
@@ -244,7 +244,7 @@
   }
 
   .flow > * + * {
-    margin-block-start: var(--flow-space, 1em);
+    margin-block-start: var(--_flow-space, 1em);
   }
 
   .flexible-grid {
@@ -258,13 +258,13 @@
   }
 
   .auto-grid {
-    --min-cell-size: var(--size-14);
+    --_min-cell-size: var(--size-14);
 
     display: grid;
     gap: var(--size-3);
     grid-template-columns: repeat(
       auto-fit,
-      minmax(min(var(--min-cell-size), 100%), 1fr)
+      minmax(min(var(--_min-cell-size), 100%), 1fr)
     );
   }
 
