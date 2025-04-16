@@ -57,7 +57,7 @@
   }
 
   :root {
-    --brand: light-dark(var(--green-10), var(--green-5));
+    --brand: light-dark(var(--teal-10), var(--teal-5));
     --link: light-dark(var(--indigo-7), var(--indigo-3));
     --link-visited: light-dark(var(--purple-7), var(--purple-3));
     --text-1: light-dark(var(--gray-9), var(--gray-2));
