@@ -56,42 +56,20 @@ textarea:not([rows]) {
 /* --------------------- */
 
 :root {
-  --brand: var(--green-10);
-  --link: var(--indigo-7);
-  --link-visited: var(--purple-7);
-  --text-1: var(--gray-9);
-  --text-2: var(--gray-8);
-  --surface-1: var(--gray-0);
-  --surface-2: var(--gray-1);
-  --surface-3: var(--gray-2);
-  --surface-4: var(--gray-3);
-  --scrollthumb-color: var(--gray-7);
+  --brand: light-dark(var(--green-10), var(--green-5));
+  --link: light-dark(var(--indigo-7), var(--indigo-3));
+  --link-visited: light-dark(var(--purple-7), var(--purple-3));
+  --text-1: light-dark(var(--gray-9), var(--gray-2));
+  --text-2: light-dark(var(--gray-8), var(--gray-4));
+  --surface-1: light-dark(var(--gray-0), var(--gray-10));
+  --surface-2: light-dark(var(--gray-1), var(--gray-9));
+  --surface-3: light-dark(var(--gray-2), var(--gray-8));
+  --surface-4: light-dark(var(--gray-3), var(--gray-7));
+  --scrollthumb-color: light-dark(var(--gray-7), var(--gray-6));
 
   --font-brand: 'Inter', sans-serif;
 
   --size-content-4: 70ch;
-}
-
-/* Dark theme overrides */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --brand: var(--green-5);
-    --link: var(--indigo-3);
-    --link-visited: var(--purple-3);
-    --text-1: var(--gray-2);
-    --text-2: var(--gray-4);
-    --surface-1: var(--gray-10);
-    --surface-2: var(--gray-9);
-    --surface-3: var(--gray-8);
-    --surface-4: var(--gray-7);
-    --scrollthumb-color: var(--gray-6);
-    --shadow-strength: 10%;
-    --shadow-color: 220 40% 2%;
-  }
-
-  html {
-    color-scheme: dark;
-  }
 }
 
 /* --------------------- */
@@ -100,7 +78,7 @@ textarea:not([rows]) {
 
 html {
   -webkit-text-size-adjust: none;
-  color-scheme: light;
+  color-scheme: light dark;
 
   accent-color: var(--brand, var(--link));
   caret-color: var(--brand, var(--link));
