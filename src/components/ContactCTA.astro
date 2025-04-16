@@ -2,38 +2,32 @@
 import EnvelopeIcon from '../assets/icons/envelope-solid.svg'
 ---
 
-<section class="breakout section">
-  <div class="space-between">
-    <h2>Interested in working together?</h2>
-    <a href="mailto:heygauravshukla@gmail.com" class="button primary"
-      ><EnvelopeIcon class="icon" /> Send me a message</a
-    >
-  </div>
+<section class="breakout section flow">
+  <h2>Interested in working together?</h2>
+  <a href="mailto:heygauravshukla@gmail.com" class="button primary"
+    ><EnvelopeIcon class="icon" /> Send me a message</a
+  >
 </section>
 
 <style>
-  .space-between {
-    flex-direction: column;
-    gap: var(--size-fluid-2);
-    align-items: center;
+  section {
+    text-align: center;
 
     background-color: var(--surface-2);
-    padding-block: var(--size-fluid-5);
     border: var(--border-size-1) solid var(--surface-3);
     border-radius: var(--radius-3);
+    margin-block-end: var(--size-fluid-5);
   }
 
   h2 {
-    text-align: center;
     font-size: var(--font-size-fluid-2);
     line-height: var(--font-lineheight-2);
   }
 
   a {
     width: fit-content;
-    min-width: fit-content;
 
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: var(--size-2);
 
