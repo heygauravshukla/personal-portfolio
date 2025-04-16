@@ -1,296 +1,274 @@
-@font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf');
-  font-weight: 400 900;
-  font-display: swap;
+@layer reset, base, components, utilities;
+
+@layer reset {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  ul[role='list'],
+  ol[role='list'] {
+    list-style: none;
+  }
+
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  textarea:not([rows]) {
+    min-height: 10em;
+  }
+
+  :target {
+    scroll-margin-block: 5ex;
+  }
 }
 
-/* --------------------- */
-/* 1. Base Reset         */
-/* --------------------- */
+@layer base {
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-VariableFont_opsz,wght.ttf');
+    font-weight: 400 900;
+    font-display: swap;
+  }
 
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
+  :root {
+    --brand: light-dark(var(--green-10), var(--green-5));
+    --link: light-dark(var(--indigo-7), var(--indigo-3));
+    --link-visited: light-dark(var(--purple-7), var(--purple-3));
+    --text-1: light-dark(var(--gray-9), var(--gray-2));
+    --text-2: light-dark(var(--gray-8), var(--gray-4));
+    --surface-1: light-dark(var(--gray-0), var(--gray-10));
+    --surface-2: light-dark(var(--gray-1), var(--gray-9));
+    --surface-3: light-dark(var(--gray-2), var(--gray-8));
+    --surface-4: light-dark(var(--gray-3), var(--gray-7));
+    --scrollthumb-color: light-dark(var(--gray-7), var(--gray-6));
 
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
+    --font-brand: 'Inter', sans-serif;
 
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
+    --size-content-4: 70ch;
+  }
 
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-input,
-button,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-}
-
-textarea:not([rows]) {
-  min-height: 10em;
-}
-
-/* --------------------- */
-/* 2. Root Variables     */
-/* --------------------- */
-
-:root {
-  --brand: light-dark(var(--green-10), var(--green-5));
-  --link: light-dark(var(--indigo-7), var(--indigo-3));
-  --link-visited: light-dark(var(--purple-7), var(--purple-3));
-  --text-1: light-dark(var(--gray-9), var(--gray-2));
-  --text-2: light-dark(var(--gray-8), var(--gray-4));
-  --surface-1: light-dark(var(--gray-0), var(--gray-10));
-  --surface-2: light-dark(var(--gray-1), var(--gray-9));
-  --surface-3: light-dark(var(--gray-2), var(--gray-8));
-  --surface-4: light-dark(var(--gray-3), var(--gray-7));
-  --scrollthumb-color: light-dark(var(--gray-7), var(--gray-6));
-
-  --font-brand: 'Inter', sans-serif;
-
-  --size-content-4: 70ch;
-}
-
-/* --------------------- */
-/* 3. Structural Elements */
-/* --------------------- */
-
-html {
-  -webkit-text-size-adjust: none;
-  color-scheme: light dark;
-
-  accent-color: var(--brand, var(--link));
-  caret-color: var(--brand, var(--link));
-  scrollbar-color: var(--scrollthumb-color) transparent;
-}
-
-@media (prefers-reduced-motion: no-preference) {
   html {
-    scroll-behavior: smooth;
-  }
-}
+    -webkit-text-size-adjust: none;
+    color-scheme: light dark;
 
-body {
-  background-color: var(--surface-1);
-  color: var(--text-2);
-
-  font-family: var(--font-brand);
-  line-height: var(--font-lineheight-3);
-}
-
-/* --------------------- */
-/* 4. Typography         */
-/* --------------------- */
-
-h1,
-h2,
-h3,
-h4,
-button,
-input,
-label {
-  line-height: var(--font-lineheight-0);
-}
-
-h1,
-h2,
-h3,
-h4 {
-  color: var(--text-1);
-  text-wrap: balance;
-  font-weight: var(--font-weight-9);
-}
-
-p,
-li {
-  max-width: var(--size-content-4);
-  text-wrap: pretty;
-}
-
-/* --------------------- */
-/* 5. Links & Focus      */
-/* --------------------- */
-
-a {
-  color: var(--brand, var(--link));
-
-  &:visited {
-    color: var(--link-visited);
-  }
-}
-
-:where(h1, h2, h3, h4) > a {
-  color: inherit;
-  text-decoration: none;
-
-  transition: color 250ms;
-
-  &:visited {
-    color: inherit;
+    accent-color: var(--brand, var(--link));
+    caret-color: var(--brand, var(--link));
+    scrollbar-color: var(--scrollthumb-color) transparent;
   }
 
-  &:hover {
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background-color: var(--surface-1);
+    color: var(--text-2);
+
+    font-family: var(--font-brand);
+    line-height: var(--font-lineheight-3);
+  }
+
+  main,
+  section {
+    container-type: inline-size;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  button,
+  input,
+  label {
+    line-height: var(--font-lineheight-0);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--text-1);
+    text-wrap: balance;
+    font-weight: var(--font-weight-9);
+  }
+
+  p,
+  li {
+    max-width: var(--size-content-4);
+    text-wrap: pretty;
+  }
+
+  a {
     color: var(--brand, var(--link));
+
+    &:visited {
+      color: var(--link-visited);
+    }
+  }
+
+  :where(h1, h2, h3, h4) > a {
+    color: inherit;
+    text-decoration: none;
+
+    transition: color 250ms;
+
+    &:visited {
+      color: inherit;
+    }
+
+    &:hover {
+      color: var(--brand, var(--link));
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brand, var(--link));
+  }
+
+  ::selection {
+    background-color: var(--brand);
+    color: var(--surface-1);
+  }
+
+  @view-transition {
+    navigation: auto;
+  }
+
+  /* transitions the whole page (root) */
+  @media (prefers-reduced-motion: no-preference) {
+    ::view-transition-old(root) {
+      animation: var(--animation-slide-out-down) forwards;
+    }
+
+    ::view-transition-new(root) {
+      animation: var(--animation-slide-in-up) forwards;
+    }
   }
 }
 
-:focus-visible {
-  outline: 2px solid var(--brand, var(--link));
-}
+@layer components {
+  .button {
+    --btn-background-color: var(--surface-2);
+    --btn-color: var(--text-1);
 
-::selection {
-  background-color: var(--brand);
-  color: var(--surface-1);
-}
+    cursor: pointer;
+    text-decoration: none;
+    border: 0;
 
-:target {
-  scroll-margin-block: 5ex;
-}
-
-@view-transition {
-  navigation: auto;
-}
-
-/* transitions the whole page (root) */
-@media (prefers-reduced-motion: no-preference) {
-  ::view-transition-old(root) {
-    animation: var(--animation-slide-out-down) forwards;
-  }
-
-  ::view-transition-new(root) {
-    animation: var(--animation-slide-in-up) forwards;
-  }
-}
-
-/* --------------------- */
-/* 6. Layout Utilities   */
-/* --------------------- */
-
-main,
-section {
-  container-type: inline-size;
-}
-
-.wrapper {
-  max-inline-size: 1180px;
-  margin-inline: auto;
-  padding-inline: var(--size-3);
-}
-
-.flow > * + * {
-  margin-block-start: var(--flow-space, 1em);
-}
-
-.flexible-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--size-3);
-}
-
-.flexible-grid > * {
-  flex: 1;
-}
-
-.auto-grid {
-  --min-cell-size: var(--size-14);
-
-  display: grid;
-  gap: var(--size-3);
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(var(--min-cell-size), 100%), 1fr)
-  );
-}
-
-.section {
-  margin-block-end: var(--size-8);
-}
-
-/* --------------------- */
-/* 7. UI Components      */
-/* --------------------- */
-
-.button {
-  --btn-background-color: var(--surface-2);
-  --btn-color: var(--text-1);
-
-  cursor: pointer;
-  text-decoration: none;
-  border: 0;
-
-  display: inline-flex;
-  background-color: var(--btn-background-color);
-  color: var(--btn-color);
-  padding: 1em 2em;
-  border-radius: var(--radius-round);
-
-  font-size: var(--font-size-0);
-  font-weight: var(--font-weight-6);
-  line-height: var(--font-lineheight-0);
-  letter-spacing: var(--font-letterspacing-4);
-  text-transform: uppercase;
-
-  &:visited {
+    display: inline-flex;
+    background-color: var(--btn-background-color);
     color: var(--btn-color);
+    padding: 1em 2em;
+    border-radius: var(--radius-round);
+
+    font-size: var(--font-size-0);
+    font-weight: var(--font-weight-6);
+    line-height: var(--font-lineheight-0);
+    letter-spacing: var(--font-letterspacing-4);
+    text-transform: uppercase;
+
+    &:visited {
+      color: var(--btn-color);
+    }
+
+    &.primary {
+      --btn-background-color: var(--brand);
+      --btn-color: var(--surface-1);
+    }
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.75;
+    }
+
+    &[disabled] {
+      pointer-events: none;
+      opacity: 0.5;
+    }
   }
 
-  &.primary {
-    --btn-background-color: var(--brand);
-    --btn-color: var(--surface-1);
-  }
-
-  &:hover,
-  &:focus-visible {
-    opacity: 0.75;
-  }
-
-  &[disabled] {
-    pointer-events: none;
-    opacity: 0.5;
+  .icon {
+    fill: var(--text-2);
+    width: var(--size-3);
+    height: auto;
   }
 }
 
-.icon {
-  fill: var(--text-2);
-  width: var(--size-3);
-  height: auto;
-}
+@layer utilities {
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
 
-/* --------------------- */
-/* 8. Visual Helpers     */
-/* --------------------- */
+  .brand-color {
+    color: var(--brand);
+  }
 
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
+  .wrapper {
+    max-inline-size: 1180px;
+    margin-inline: auto;
+    padding-inline: var(--size-3);
+  }
 
-.brand-color {
-  color: var(--brand);
+  .flow > * + * {
+    margin-block-start: var(--flow-space, 1em);
+  }
+
+  .flexible-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-3);
+  }
+
+  .flexible-grid > * {
+    flex: 1;
+  }
+
+  .auto-grid {
+    --min-cell-size: var(--size-14);
+
+    display: grid;
+    gap: var(--size-3);
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(var(--min-cell-size), 100%), 1fr)
+    );
+  }
+
+  .section {
+    margin-block-end: var(--size-8);
+  }
 }
