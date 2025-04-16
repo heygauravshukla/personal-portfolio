@@ -258,13 +258,13 @@
   }
 
   .auto-grid {
-    --_min-cell-size: var(--size-14);
+    --_min-column-size: var(--size-14);
 
     display: grid;
     gap: var(--size-3);
     grid-template-columns: repeat(
       auto-fit,
-      minmax(min(var(--_min-cell-size), 100%), 1fr)
+      minmax(min(var(--_min-column-size), 100%), 1fr)
     );
   }
 
