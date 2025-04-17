@@ -183,7 +183,7 @@
 
 @layer components {
   .button {
-    --_btn-background-color: var(--surface-2);
+    --_btn-background-color: var(--surface-3);
     --_btn-color: var(--text-1);
 
     cursor: pointer;
