@@ -52,7 +52,7 @@
   @font-face {
     font-family: 'Inter';
     src: url('/fonts/Inter-VariableFont_opsz,wght.ttf');
-    font-weight: 400 900;
+    font-weight: 400 700;
     font-display: swap;
   }
 
@@ -117,7 +117,7 @@
   h4 {
     color: var(--text-1);
     text-wrap: balance;
-    font-weight: var(--font-weight-9);
+    font-weight: var(--font-weight-7);
   }
 
   p,
