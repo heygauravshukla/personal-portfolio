@@ -49,13 +49,6 @@ const links: { label: string; href: string }[] = [
       document.body.style.overflow = isOpen ? 'auto' : 'hidden'
     })
   })
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav?.getAttribute('aria-expanded') === 'true') {
-      nav.setAttribute('aria-expanded', 'false')
-      document.body.style.overflow = 'auto'
-    }
-  })
 </script>
 
 <style>
