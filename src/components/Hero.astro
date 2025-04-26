@@ -2,12 +2,18 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js'
 
 import AvatarImage from '../assets/gaurav-shukla.webp'
-import GitHubIcon from '../assets/icons/github-brands.svg'
-import LinkedInIcon from '../assets/icons/linkedin-brands.svg'
 import XIcon from '../assets/icons/x-twitter-brands.svg'
 import InstagramIcon from '../assets/icons/instagram-brands.svg'
+import GitHubIcon from '../assets/icons/github-brands.svg'
+import LinkedInIcon from '../assets/icons/linkedin-brands.svg'
 
 const links: { label: string; href: string; icon?: AstroComponentFactory }[] = [
+  { label: 'X', href: 'https://x.com/heygauravshukla', icon: XIcon },
+  {
+    label: 'Instagram',
+    href: 'https://instagram.com/heygauravshukla',
+    icon: InstagramIcon,
+  },
   {
     label: 'GitHub',
     href: 'https://github.com/heygauravshukla',
@@ -17,12 +23,6 @@ const links: { label: string; href: string; icon?: AstroComponentFactory }[] = [
     label: 'LinkedIn',
     href: 'https://linkedin.com/in/heygauravshukla',
     icon: LinkedInIcon,
-  },
-  { label: 'X', href: 'https://x.com/heygauravshukla', icon: XIcon },
-  {
-    label: 'Instagram',
-    href: 'https://instagram.com/heygauravshukla',
-    icon: InstagramIcon,
   },
 ]
 ---
