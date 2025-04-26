@@ -9,6 +9,7 @@
   }
 
   :root {
+    --color-scheme: dark;
     --brand: var(--teal-3);
     --link: var(--indigo-3);
     --link-visited: var(--purple-3);
@@ -55,7 +56,7 @@
   html {
     -webkit-text-size-adjust: none;
 
-    color-scheme: dark;
+    color-scheme: var(--color-scheme);
     accent-color: var(--brand, var(--link));
     caret-color: var(--brand, var(--link));
     scrollbar-color: var(--scrollthumb-color) transparent;
