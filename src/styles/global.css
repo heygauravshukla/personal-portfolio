@@ -1,52 +1,4 @@
-@layer reset, base, components, utilities;
-
-@layer reset {
-  *,
-  ::before,
-  ::after {
-    box-sizing: border-box;
-  }
-
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  figure,
-  blockquote,
-  dl,
-  dd {
-    margin: 0;
-  }
-
-  ul[role='list'],
-  ol[role='list'] {
-    list-style: none;
-  }
-
-  img,
-  picture {
-    max-width: 100%;
-    display: block;
-  }
-
-  input,
-  button,
-  textarea,
-  select {
-    font-family: inherit;
-    font-size: inherit;
-  }
-
-  textarea:not([rows]) {
-    min-height: 10em;
-  }
-
-  :target {
-    scroll-margin-block: 5ex;
-  }
-}
+@layer base, components, utilities;
 
 @layer base {
   @font-face {
@@ -73,10 +25,37 @@
     --size-content-4: 70ch;
   }
 
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
   html {
     -webkit-text-size-adjust: none;
-    color-scheme: dark;
 
+    color-scheme: dark;
     accent-color: var(--brand, var(--link));
     caret-color: var(--brand, var(--link));
     scrollbar-color: var(--scrollthumb-color) transparent;
@@ -94,6 +73,36 @@
 
     font-family: var(--font-brand);
     line-height: var(--font-lineheight-4);
+  }
+
+  @view-transition {
+    navigation: auto;
+  }
+
+  /* transitions the whole page (root) */
+  @media (prefers-reduced-motion: no-preference) {
+    ::view-transition-old(root) {
+      animation: var(--animation-slide-out-down) forwards;
+    }
+
+    ::view-transition-new(root) {
+      animation: var(--animation-slide-in-up) forwards;
+    }
+  }
+
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+
+  ul[role='list'],
+  ol[role='list'] {
+    list-style: none;
+  }
+
+  textarea:not([rows]) {
+    min-height: 10em;
   }
 
   main,
@@ -134,13 +143,6 @@
     }
   }
 
-  code {
-    background-color: var(--surface-3);
-    color: var(--brand);
-    padding: 0.25em 0.5em;
-    border-radius: var(--radius-1);
-  }
-
   :where(h1, h2, h3, h4) > a {
     color: inherit;
     text-decoration: none;
@@ -156,6 +158,17 @@
     }
   }
 
+  code {
+    background-color: var(--surface-3);
+    color: var(--brand);
+    padding: 0.25em 0.5em;
+    border-radius: var(--radius-1);
+  }
+
+  :target {
+    scroll-margin-block: 5ex;
+  }
+
   :focus-visible {
     outline: 2px solid var(--brand, var(--link));
   }
@@ -163,21 +176,6 @@
   ::selection {
     background-color: var(--brand);
     color: var(--surface-1);
-  }
-
-  @view-transition {
-    navigation: auto;
-  }
-
-  /* transitions the whole page (root) */
-  @media (prefers-reduced-motion: no-preference) {
-    ::view-transition-old(root) {
-      animation: var(--animation-slide-out-down) forwards;
-    }
-
-    ::view-transition-new(root) {
-      animation: var(--animation-slide-in-up) forwards;
-    }
   }
 }
 
@@ -245,6 +243,10 @@
     color: var(--brand);
   }
 
+  .flow > * + * {
+    margin-block-start: var(--_flow-space, 1em);
+  }
+
   .content-grid {
     --_padding-inline: var(--size-3);
     --_content-max-width: 1100px;
@@ -289,10 +291,6 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
-  }
-
-  .flow > * + * {
-    margin-block-start: var(--_flow-space, 1em);
   }
 
   .flexible-grid {
