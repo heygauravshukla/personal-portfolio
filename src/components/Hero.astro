@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js'
 
 import AvatarImage from '../assets/gaurav-shukla.webp'
@@ -28,7 +29,7 @@ const links: { label: string; href: string; icon?: AstroComponentFactory }[] = [
 ---
 
 <section class="section flow">
-  <img src={AvatarImage.src} alt="Gaurav Shukla" width="64" height="64" />
+  <Image src={AvatarImage} alt="Gaurav Shukla" width="64" height="64" />
   <h1>
     <span class="visually-hidden">Gaurav Shukla</span>
     Frontend developer, creator, and tech enthusiast.

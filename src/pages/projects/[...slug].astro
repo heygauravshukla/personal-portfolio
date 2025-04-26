@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets'
 import { getCollection, render } from 'astro:content'
+
 import Layout from '../../layouts/Layout.astro'
 import ArrowLeftIcon from '../../assets/icons/arrow-left-solid.svg'
 
@@ -37,7 +39,7 @@ const { Content } = await render(project)
         {project.data.tags.map((tag) => <li>{tag}</li>)}
       </ul>
       <p>{project.data.description}</p>
-      <img
+      <Image
         class="project-img"
         src={project.data.img}
         alt={project.data.img_alt ?? `Preview image of ${project.data.title}`}

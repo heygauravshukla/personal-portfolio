@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import { getCollection } from 'astro:content'
 
 export interface Props {
@@ -25,14 +26,13 @@ if (limit) {
       projects.map((project) => (
         <li>
           <a href={`/projects/${project.id}`} aria-hidden="true" tabindex="-1">
-            <img
+            <Image
               src={project.data.img}
               alt={
                 project.data.img_alt ?? `Screenshot of ${project.data.title}`
               }
               width="362"
               height="265"
-              loading="lazy"
             />
           </a>
           <div>
