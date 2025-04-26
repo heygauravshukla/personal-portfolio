@@ -13,7 +13,7 @@ const links: { label: string; href: string }[] = [
 ---
 
 <header class="content-grid">
-  <div class="space-between">
+  <nav class="space-between">
     <a class="skip-to-main" href="#main-content">Skip to main content</a>
     <a class="logo" href="/">
       <Image src={AvatarImage} alt="Gaurav Shukla" width="24" height="24" />
@@ -22,7 +22,7 @@ const links: { label: string; href: string }[] = [
       <span class="visually-hidden">Open Menu</span>
       <BarsIcon class="icon" />
     </button>
-    <nav id="primary-nav" aria-expanded="false">
+    <div id="primary-nav" aria-expanded="false">
       <button class="menu-closer" aria-controls="primary-nav">
         <span class="visually-hidden">Close Menu</span>
         <XMarkIcon class="icon" />
@@ -36,8 +36,8 @@ const links: { label: string; href: string }[] = [
           ))
         }
       </menu>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </header>
 
 <script>
@@ -67,7 +67,7 @@ const links: { label: string; href: string }[] = [
     border-bottom: var(--border-size-1) solid var(--surface-3);
   }
 
-  .space-between {
+  nav {
     align-items: center;
   }
 
@@ -132,7 +132,7 @@ const links: { label: string; href: string }[] = [
       border: 0;
     }
 
-    nav {
+    #primary-nav {
       translate: 0 -200%;
       visibility: hidden;
 
@@ -150,7 +150,7 @@ const links: { label: string; href: string }[] = [
       transition: all 300ms;
     }
 
-    nav[aria-expanded='true'] {
+    #primary-nav[aria-expanded='true'] {
       translate: 0 0;
       visibility: visible;
     }
