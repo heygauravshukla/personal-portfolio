@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 import AvatarImage from "../assets/gaurav-shukla.webp";
 import BarsIcon from "../assets/icons/bars-solid.svg";
 import XMarkIcon from "../assets/icons/xmark-solid.svg";
@@ -16,7 +14,7 @@ const links: { label: string; href: string }[] = [
   <nav class="wrapper">
     <a class="skip-to-main" href="#main-content">Skip to main content</a>
     <a class="logo" href="/">
-      <Image src={AvatarImage} alt="Gaurav Shukla" width="28" height="28" />
+      <img src={AvatarImage.src} alt="Gaurav Shukla" width="28" height="28" />
     </a>
     <button class="menu-opener" aria-controls="primary-nav">
       <span class="visually-hidden">Open Menu</span>

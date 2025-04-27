@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 export interface Props {
@@ -31,7 +30,7 @@ if (limit) {
               aria-hidden="true"
               tabindex="-1"
             >
-              <Image
+              <img
                 src={project.data.img}
                 alt={
                   project.data.img_alt ?? `Screenshot of ${project.data.title}`
