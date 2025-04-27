@@ -18,102 +18,108 @@ const { Content } = await render(project);
 ---
 
 <Layout title={project.data.title} description={project.data.description}>
-  <button onclick="history.back()" title="Go back">
-    <ArrowLeftIcon class="icon" />
-    <span class="visually-hidden">Go back</span>
-  </button>
+  <div class="wrapper">
+    <button onclick="history.back()" title="Go back">
+      <ArrowLeftIcon />
+      <span class="visually-hidden">Go back</span>
+    </button>
 
-  <article class="flow">
-    <header class="flow">
-      <time datetime={new Date(project.data.publishDate).toISOString()}>
-        {
-          new Date(project.data.publishDate).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })
-        }
-      </time>
-      <h1>{project.data.title}</h1>
-      <ul class="tags">
-        {project.data.tags.map((tag) => <li>{tag}</li>)}
-      </ul>
-      <p>{project.data.description}</p>
-      <Image
-        class="project-img"
-        src={project.data.img}
-        alt={project.data.img_alt ?? `Preview image of ${project.data.title}`}
-        width="750"
-        height="550"
-      />
-      <div class="button-group">
-        {
-          project.data.live_site_url && (
-            <a
-              class="button primary"
-              href={project.data.live_site_url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Live Site
-            </a>
-          )
-        }
-        {
-          project.data.source_code_url && (
-            <a
-              class="button"
-              href={project.data.source_code_url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Source Code
-            </a>
-          )
-        }
-      </div>
-    </header>
-
-    <main class="content flow">
-      <Content />
-    </main>
-  </article>
+    <article class="flow">
+      <header class="flow">
+        <time datetime={new Date(project.data.publishDate).toISOString()}>
+          {
+            new Date(project.data.publishDate).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </time>
+        <h1 class="font-size-xl">{project.data.title}</h1>
+        <ul class="tags">
+          {project.data.tags.map((tag) => <li>{tag}</li>)}
+        </ul>
+        <p>{project.data.description}</p>
+        <Image
+          class="project-img"
+          src={project.data.img}
+          alt={project.data.img_alt ?? `Preview image of ${project.data.title}`}
+          width="750"
+          height="550"
+        />
+        <div class="button-group">
+          {
+            project.data.live_site_url && (
+              <a
+                class="button primary"
+                href={project.data.live_site_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Live Site
+              </a>
+            )
+          }
+          {
+            project.data.source_code_url && (
+              <a
+                class="button"
+                href={project.data.source_code_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Source Code
+              </a>
+            )
+          }
+        </div>
+      </header>
+      <main class="prose flow">
+        <Content />
+      </main>
+    </article>
+  </div>
 </Layout>
 
 <style>
   button[title="Go back"] {
     cursor: pointer;
-    width: var(--size-8);
-    height: var(--size-8);
+    display: grid;
+    place-items: center;
+
+    width: 3rem;
+    height: 3rem;
     background-color: transparent;
-    border: var(--border-size-1) solid var(--surface-3);
-    border-radius: var(--radius-round);
-    margin-block-start: var(--size-fluid-5);
+    border: 1px solid var(--clr-surface-3);
+    border-radius: 100vh;
+    margin-block-start: 4rem;
+
     transition: background-color 0.2s ease-in-out;
 
     &:hover {
-      background-color: var(--surface-2);
+      background-color: var(--clr-surface-2);
+    }
+
+    & > svg {
+      fill: var(--clr-text-2);
     }
   }
 
   article {
-    --_flow-space: var(--size-6);
-    max-width: var(--size-content-4);
+    --_flow-space: 2rem;
+
+    max-width: 70ch;
     margin-inline: auto;
-    margin-block: var(--size-fluid-4);
+    margin-block: 4rem;
   }
 
   header {
-    --_flow-space: var(--size-4);
+    --_flow-space: 1.5rem;
   }
 
   time {
-    border-inline-start: var(--border-size-2) solid var(--surface-4);
+    border-inline-start: 2px solid var(--clr-surface-4);
     padding-inline-start: var(--size-3);
-  }
-
-  h1 {
-    font-size: var(--font-size-fluid-3);
   }
 
   .tags {
@@ -124,34 +130,34 @@ const { Content } = await render(project);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--size-2);
+    gap: 0.875rem;
   }
 
   .tags li {
     text-transform: uppercase;
-    font-size: var(--font-size-0);
-    font-weight: var(--font-weight-6);
+    font-size: var(--fs-100);
+    font-weight: var(--fw-semi-bold);
 
-    background-color: var(--brand);
-    color: var(--surface-1);
-    padding: var(--size-1) var(--size-3);
-    border-radius: var(--radius-round);
+    background-color: var(--clr-brand);
+    color: var(--clr-surface-1);
+    padding: 0.25rem 1rem;
+    border-radius: 100vh;
   }
 
   .project-img {
     width: 100%;
     height: auto;
-    border-radius: var(--radius-2);
+    border-radius: 8px;
   }
 
   .button-group {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--size-2);
+    gap: 0.875rem;
   }
 
-  .content {
-    --_flow-space: var(--size-5);
+  .prose {
+    --_flow-space: 1.5rem;
   }
 </style>

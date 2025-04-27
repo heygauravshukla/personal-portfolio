@@ -1,6 +1,6 @@
 # Personal Website
 
-This is my personal website built with Astro, Open Props, and a lot of hard work — crafted to showcase my projects, technical skills, and ongoing journey as a developer.
+This is my personal website built with Astro, Modern CSS and a lot of hard work — crafted to showcase my projects, technical skills, and ongoing journey as a developer.
 
 ## Table of contents
 
@@ -45,7 +45,6 @@ This portfolio aims to deliver a seamless and accessible user experience. Key ch
 - Static Site Generation (SSG)
 - Locally hosted dependencies (Fonts, Open Props)
 - [Astro](https://astro.build) - The web framework for content-driven websites
-- [Open Props](https://open-props.style) - Supercharged CSS variables
 - [pnpm](https://pnpm.io) - Fast, disk space efficient package manager
 
 ### What I learned

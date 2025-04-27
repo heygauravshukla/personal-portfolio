@@ -11,7 +11,7 @@ const { limit } = Astro.props;
 let projects = await getCollection("projects");
 
 projects = projects.sort(
-  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
 
 if (limit) {
@@ -19,62 +19,74 @@ if (limit) {
 }
 ---
 
-<section class="section flow">
-  <h2>Projects</h2>
-  <ul class="auto-grid">
-    {
-      projects.map((project) => (
-        <li>
-          <a href={`/projects/${project.id}`} aria-hidden="true" tabindex="-1">
-            <Image
-              src={project.data.img}
-              alt={
-                project.data.img_alt ?? `Screenshot of ${project.data.title}`
-              }
-              width="362"
-              height="265"
-            />
-          </a>
-          <div>
-            <h3>
-              <a href={`/projects/${project.id}`}>{project.data.title}</a>
-            </h3>
-            <p>{project.data.description}</p>
-          </div>
-        </li>
-      ))
-    }
-  </ul>
+<section class="section">
+  <div class="wrapper flow">
+    <h2 class="section-title">Projects</h2>
+    <ul>
+      {
+        projects.map((project) => (
+          <li>
+            <a
+              href={`/projects/${project.id}`}
+              aria-hidden="true"
+              tabindex="-1"
+            >
+              <Image
+                src={project.data.img}
+                alt={
+                  project.data.img_alt ?? `Screenshot of ${project.data.title}`
+                }
+                width="362"
+                height="265"
+              />
+            </a>
+            <div class="card-content">
+              <h3 class="font-size-500">
+                <a href={`/projects/${project.id}`}>{project.data.title}</a>
+              </h3>
+              <p>{project.data.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>
 
 <style>
   section {
-    padding-block: var(--size-fluid-5);
+    container-type: inline-size;
   }
 
-  h2 {
-    text-transform: uppercase;
-    font-size: var(--font-size-fluid-2);
+  .wrapper {
+    --_flow-space: 2.25rem;
   }
 
   ul {
+    --_min-column-size: 20rem;
+
     list-style: none;
     padding: 0;
     margin-block-end: 0;
-    gap: var(--size-fluid-2);
+
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(var(--_min-column-size), 100%), 1fr)
+    );
   }
 
   li {
-    background-color: var(--surface-2);
-    border: var(--border-size-1) solid var(--surface-3);
-    border-radius: var(--radius-3);
+    background-color: var(--clr-surface-2);
+    border: 1px solid var(--clr-surface-3);
+    border-radius: 8px;
     overflow: hidden;
   }
 
   img {
     width: 100%;
     height: auto;
-    border-bottom: var(--border-size-1) solid var(--surface-3);
     transition: scale 0.2s ease-in-out;
 
     &:hover,
@@ -83,14 +95,10 @@ if (limit) {
     }
   }
 
-  div:has(h3) {
-    padding: var(--size-3);
+  .card-content {
+    padding: 1rem;
     display: grid;
-    gap: var(--size-2);
-  }
-
-  h3 {
-    font-size: var(--font-size-3);
+    gap: 0.75rem;
   }
 
   p {
@@ -98,5 +106,11 @@ if (limit) {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;
+  }
+
+  @container (min-width: 640px) {
+    ul {
+      gap: 1.5rem;
+    }
   }
 </style>

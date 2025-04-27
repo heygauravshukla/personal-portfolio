@@ -9,7 +9,7 @@ live_site_url: https://heygauravshukla.netlify.app
 source_code_url: https://github.com/heygauravshukla/personal-website
 tags:
   - Astro
-  - Open Props
+  - Modern CSS
 ---
 
 ## The challenge
@@ -29,7 +29,6 @@ This portfolio aims to deliver a seamless and accessible user experience. Key ch
 - Static Site Generation (SSG)
 - Locally hosted dependencies (Fonts, Open Props)
 - [Astro](https://astro.build) - The web framework for content-driven websites
-- [Open Props](https://open-props.style) - Supercharged CSS variables
 - [pnpm](https://pnpm.io) - Fast, disk space efficient package manager
 
 ## What I learned

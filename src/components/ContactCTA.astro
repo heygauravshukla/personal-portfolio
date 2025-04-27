@@ -2,51 +2,58 @@
 import EnvelopeIcon from "../assets/icons/envelope-solid.svg";
 ---
 
-<section class="breakout section flow">
-  <h2>Interested in working together?</h2>
-  <a href="mailto:heygauravshukla@gmail.com" class="button primary"
-    ><EnvelopeIcon class="icon" /> Send me a message</a
-  >
+<section class="section">
+  <div class="wrapper grid-flow">
+    <h2>Interested in working together?</h2>
+    <a href="mailto:heygauravshukla@gmail.com" class="button primary"
+      ><EnvelopeIcon /> Send me a message</a
+    >
+  </div>
 </section>
 
 <style>
   section {
     container-type: inline-size;
-    text-align: center;
+    background-color: var(--clr-surface-2);
+  }
 
-    background-color: var(--surface-2);
-    padding-inline: var(--size-3);
-    border: var(--border-size-1) solid var(--surface-3);
-    border-radius: var(--radius-3);
-    margin-block-end: var(--size-fluid-5);
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   h2 {
-    font-size: var(--font-size-fluid-2);
-    line-height: var(--font-lineheight-2);
+    font-size: var(--fs-800);
+    line-height: 1.25;
   }
 
   a {
     width: fit-content;
-
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: var(--size-2);
-
-    font-size: var(--font-size-fluid-0);
+    gap: 0.5rem;
   }
 
-  .icon {
-    fill: currentColor;
+  @container (min-width: 640px) {
+    .wrapper {
+      gap: 1.5rem;
+    }
+
+    a {
+      padding: 1rem 2rem;
+    }
   }
 
   @container (min-width: 768px) {
-    a {
-      gap: var(--size-3);
+    .wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .icon {
-      width: var(--size-4);
+    a {
+      max-height: fit-content;
     }
   }
 </style>

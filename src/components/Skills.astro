@@ -6,6 +6,7 @@ export const skills: string[] = [
   "TypeScript",
   "React",
   "Next.js",
+  "Astro",
   "Tailwind CSS",
   "Git",
   "GitHub",
@@ -13,22 +14,22 @@ export const skills: string[] = [
 ];
 ---
 
-<section class="section flow">
-  <h2>Skills</h2>
-  <ul class="flexible-grid">
-    {skills.map((skill) => <li>{skill}</li>)}
-  </ul>
+<section class="section background-surface-2">
+  <div class="wrapper flow">
+    <h2 class="section-title">Skills</h2>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+  </div>
 </section>
 
 <style>
   section {
-    --_flow-space: 2em;
-    padding-block: var(--size-fluid-5);
+    container-type: inline-size;
   }
 
-  h2 {
-    text-transform: uppercase;
-    font-size: var(--font-size-fluid-2);
+  .wrapper {
+    --_flow-space: 2.25rem;
   }
 
   ul {
@@ -36,16 +37,32 @@ export const skills: string[] = [
     padding: 0;
     margin-block-end: 0;
 
-    gap: var(--size-fluid-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    & > * {
+      flex: 1;
+    }
   }
 
   li {
     min-width: fit-content;
-    padding: var(--size-fluid-3);
-    border: var(--border-size-2) solid var(--surface-3);
-    border-radius: var(--radius-drawn-6);
+    padding: 1.5rem;
+    border: 2px dotted var(--clr-surface-4);
+    border-radius: 8px;
 
     text-align: center;
     text-transform: uppercase;
+  }
+
+  @container (min-width: 640px) {
+    ul {
+      gap: 1.5rem;
+    }
+
+    li {
+      padding: 2rem;
+    }
   }
 </style>
