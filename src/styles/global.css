@@ -2,8 +2,8 @@
 
 @layer base {
   @font-face {
-    font-family: 'Inter';
-    src: url('/fonts/Inter-VariableFont_opsz,wght.ttf');
+    font-family: "Inter";
+    src: url("/fonts/Inter-VariableFont_opsz,wght.ttf");
     font-weight: 400 700;
     font-display: swap;
   }
@@ -21,7 +21,7 @@
     --surface-4: var(--gray-7);
     --scrollthumb-color: var(--gray-6);
 
-    --font-brand: 'Inter', sans-serif;
+    --font-brand: "Inter", sans-serif;
 
     --size-content-4: 70ch;
   }
@@ -97,8 +97,8 @@
     display: block;
   }
 
-  ul[role='list'],
-  ol[role='list'] {
+  ul[role="list"],
+  ol[role="list"] {
     list-style: none;
   }
 

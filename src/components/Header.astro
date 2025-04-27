@@ -1,15 +1,15 @@
 ---
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets";
 
-import AvatarImage from '../assets/gaurav-shukla.webp'
-import BarsIcon from '../assets/icons/bars-solid.svg'
-import XMarkIcon from '../assets/icons/xmark-solid.svg'
+import AvatarImage from "../assets/gaurav-shukla.webp";
+import BarsIcon from "../assets/icons/bars-solid.svg";
+import XMarkIcon from "../assets/icons/xmark-solid.svg";
 
 const links: { label: string; href: string }[] = [
-  { label: 'Home', href: '/' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Contact', href: 'mailto:heygauravshukla@gmail.com' },
-]
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "mailto:heygauravshukla@gmail.com" },
+];
 ---
 
 <header class="content-grid">
@@ -41,16 +41,18 @@ const links: { label: string; href: string }[] = [
 </header>
 
 <script>
-  const nav = document.querySelector('#primary-nav')
-  const navTogglers = document.querySelectorAll('[aria-controls="primary-nav"]')
+  const nav = document.querySelector("#primary-nav");
+  const navTogglers = document.querySelectorAll(
+    '[aria-controls="primary-nav"]',
+  );
 
   navTogglers.forEach((navToggler) => {
-    navToggler.addEventListener('click', () => {
-      const isOpen = nav?.getAttribute('aria-expanded') === 'true'
-      nav?.setAttribute('aria-expanded', String(!isOpen))
-      document.body.style.overflow = isOpen ? 'auto' : 'hidden'
-    })
-  })
+    navToggler.addEventListener("click", () => {
+      const isOpen = nav?.getAttribute("aria-expanded") === "true";
+      nav?.setAttribute("aria-expanded", String(!isOpen));
+      document.body.style.overflow = isOpen ? "auto" : "hidden";
+    });
+  });
 </script>
 
 <style>
@@ -150,7 +152,7 @@ const links: { label: string; href: string }[] = [
       transition: all 300ms;
     }
 
-    #primary-nav[aria-expanded='true'] {
+    #primary-nav[aria-expanded="true"] {
       translate: 0 0;
       visibility: visible;
     }

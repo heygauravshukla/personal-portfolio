@@ -1,18 +1,18 @@
 ---
-import Header from '../components/Header.astro'
-import ContactCTA from '../components/ContactCTA.astro'
-import Footer from '../components/Footer.astro'
-import '../styles/global.css'
+import Header from "../components/Header.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 
 interface Props {
-  title?: string | undefined
-  description?: string | undefined
+  title?: string | undefined;
+  description?: string | undefined;
 }
 
 const {
-  title = 'Gaurav Shukla: Personal Website',
-  description = 'The personal website of Gaurav Shukla',
-} = Astro.props
+  title = "Gaurav Shukla: Personal Website",
+  description = "The personal website of Gaurav Shukla",
+} = Astro.props;
 ---
 
 <!doctype html>

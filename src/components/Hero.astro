@@ -1,31 +1,31 @@
 ---
-import { Image } from 'astro:assets'
-import type { AstroComponentFactory } from 'astro/runtime/server/index.js'
+import { Image } from "astro:assets";
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 
-import AvatarImage from '../assets/gaurav-shukla.webp'
-import XIcon from '../assets/icons/x-twitter-brands.svg'
-import InstagramIcon from '../assets/icons/instagram-brands.svg'
-import GitHubIcon from '../assets/icons/github-brands.svg'
-import LinkedInIcon from '../assets/icons/linkedin-brands.svg'
+import AvatarImage from "../assets/gaurav-shukla.webp";
+import XIcon from "../assets/icons/x-twitter-brands.svg";
+import InstagramIcon from "../assets/icons/instagram-brands.svg";
+import GitHubIcon from "../assets/icons/github-brands.svg";
+import LinkedInIcon from "../assets/icons/linkedin-brands.svg";
 
 const links: { label: string; href: string; icon?: AstroComponentFactory }[] = [
-  { label: 'X', href: 'https://x.com/heygauravshukla', icon: XIcon },
+  { label: "X", href: "https://x.com/heygauravshukla", icon: XIcon },
   {
-    label: 'Instagram',
-    href: 'https://instagram.com/heygauravshukla',
+    label: "Instagram",
+    href: "https://instagram.com/heygauravshukla",
     icon: InstagramIcon,
   },
   {
-    label: 'GitHub',
-    href: 'https://github.com/heygauravshukla',
+    label: "GitHub",
+    href: "https://github.com/heygauravshukla",
     icon: GitHubIcon,
   },
   {
-    label: 'LinkedIn',
-    href: 'https://linkedin.com/in/heygauravshukla',
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/heygauravshukla",
     icon: LinkedInIcon,
   },
-]
+];
 ---
 
 <section class="section flow">
@@ -43,7 +43,7 @@ const links: { label: string; href: string; icon?: AstroComponentFactory }[] = [
   <ul>
     {
       links.map((link) => {
-        const Icon = link.icon
+        const Icon = link.icon;
         return (
           <li>
             <a href={link.href} target="_blank" rel="noopener noreferrer">
@@ -51,7 +51,7 @@ const links: { label: string; href: string; icon?: AstroComponentFactory }[] = [
               <span class="visually-hidden">Visit my {link.label} profile</span>
             </a>
           </li>
-        )
+        );
       })
     }
   </ul>

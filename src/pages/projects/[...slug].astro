@@ -1,20 +1,20 @@
 ---
-import { Image } from 'astro:assets'
-import { getCollection, render } from 'astro:content'
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
 
-import Layout from '../../layouts/Layout.astro'
-import ArrowLeftIcon from '../../assets/icons/arrow-left-solid.svg'
+import Layout from "../../layouts/Layout.astro";
+import ArrowLeftIcon from "../../assets/icons/arrow-left-solid.svg";
 
 export async function getStaticPaths() {
-  const projects = await getCollection('projects')
+  const projects = await getCollection("projects");
   return projects.map((project) => ({
     params: { slug: project.id },
     props: { project },
-  }))
+  }));
 }
 
-const { project } = Astro.props
-const { Content } = await render(project)
+const { project } = Astro.props;
+const { Content } = await render(project);
 ---
 
 <Layout title={project.data.title} description={project.data.description}>
@@ -27,10 +27,10 @@ const { Content } = await render(project)
     <header class="flow">
       <time datetime={new Date(project.data.publishDate).toISOString()}>
         {
-          new Date(project.data.publishDate).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
+          new Date(project.data.publishDate).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
           })
         }
       </time>
@@ -81,7 +81,7 @@ const { Content } = await render(project)
 </Layout>
 
 <style>
-  button[title='Go back'] {
+  button[title="Go back"] {
     cursor: pointer;
     width: var(--size-8);
     height: var(--size-8);
