@@ -4,7 +4,7 @@ publishDate: 2025-02-06 22:03:00
 img: /images/preview-shortly-url-shortener.webp
 img_alt: Preview of Shortly - URL Shortener
 description: |
-  A URL shortener web application designed to quickly convert lengthy URLs into shareable short links. It includes a copy-to-clipboard button for easy sharing and stores shortened links in the browser’s localStorage for quick access across sessions.
+  A web application that converts long URLs into short, shareable links. Built with a focus on speed, simplicity, and mobile-first responsiveness.
 live_site_url: https://shortly-url-shortener-heygauravshukla.netlify.app
 source_code_url: https://github.com/heygauravshukla/shortly-url-shortener
 tags:

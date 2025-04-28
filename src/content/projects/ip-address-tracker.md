@@ -4,7 +4,7 @@ publishDate: 2025-01-10 20:22:00
 img: /images/preview-ip-address-tracker.webp
 img_alt: Preview of IP Adress Tracker
 description: |
-  An IP Address Tracker that retrieves geographical location and other details (such as ISP, city, and country) for any IP address, displaying the results on an interactive map.
+  A tool that retrieves and visualizes IP-based geographical data, such as city, country, and ISP, presented through an interactive map.
 live_site_url: https://ip-address-tracker-heygauravshukla.netlify.app
 source_code_url: https://github.com/heygauravshukla/ip-address-tracker
 tags:
