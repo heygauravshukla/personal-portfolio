@@ -154,9 +154,9 @@
   h3,
   h4 {
     font-family: var(--ff-heading);
-    font-weight: var(--fw-bold);
+    font-weight: var(--fw-semi-bold);
+    letter-spacing: -0.05em;
     color: var(--clr-text-1);
-    max-width: 20ch;
   }
 
   p,
