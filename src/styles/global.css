@@ -371,7 +371,6 @@
 
   .section-title {
     font-size: var(--fs-700);
-    text-transform: uppercase;
   }
 
   .visually-hidden {
