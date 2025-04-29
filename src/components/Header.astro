@@ -4,6 +4,7 @@ import type { HTMLAttributes } from "astro/types";
 import AvatarImage from "../assets/gaurav-shukla.webp";
 import BarsIcon from "../assets/icons/bars-solid.svg";
 import XMarkIcon from "../assets/icons/xmark-solid.svg";
+import ModeToggle from "./ModeToggle.astro";
 
 const links: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
@@ -52,11 +53,6 @@ const subpath = pathname.match(/[^\/]+/g);
       />
     </a>
 
-    <button class="hidden @max-2xl:block" aria-controls="primary-nav">
-      <span class="sr-only">Open Menu</span>
-      <BarsIcon class="fill-foreground size-4" />
-    </button>
-
     <div
       id="primary-nav"
       aria-expanded="false"
@@ -66,8 +62,8 @@ const subpath = pathname.match(/[^\/]+/g);
         aria-controls="primary-nav"
         class="hidden @max-2xl:block @max-2xl:justify-self-end"
       >
-        <span class="sr-only">Close Menu</span>
         <XMarkIcon class="fill-foreground size-4" />
+        <span class="sr-only">Close Menu</span>
       </button>
 
       <menu
@@ -93,6 +89,15 @@ const subpath = pathname.match(/[^\/]+/g);
           })
         }
       </menu>
+    </div>
+
+    <div class="flex items-center gap-5">
+      <ModeToggle />
+
+      <button class="hidden @max-2xl:block" aria-controls="primary-nav">
+        <BarsIcon class="fill-foreground size-4" />
+        <span class="sr-only">Open Menu</span>
+      </button>
     </div>
   </nav>
 </header>

@@ -1,0 +1,29 @@
+---
+import SunIcon from "../assets/icons/sun-solid.svg";
+import MoonIcon from "../assets/icons/moon-solid.svg";
+---
+
+<script>
+  const themeToggler = document.getElementById("theme-toggler");
+
+  themeToggler?.addEventListener("click", () => {
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  });
+</script>
+
+<button
+  id="theme-toggler"
+  title="Toggle theme"
+  aria-label="Toggle dark and light theme"
+>
+  <SunIcon
+    class="fill-foreground hidden size-4 dark:block"
+    aria-hidden="true"
+  />
+  <MoonIcon class="fill-foreground size-4 dark:hidden" aria-hidden="true" />
+  <span class="sr-only">Toggle theme</span>
+</button>
