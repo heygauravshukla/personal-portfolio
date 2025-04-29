@@ -9,7 +9,7 @@ live_site_url: https://heygauravshukla.netlify.app
 source_code_url: https://github.com/heygauravshukla/personal-website
 tags:
   - Astro
-  - Modern CSS
+  - Tailwind CSS
 ---
 
 ## The challenge
@@ -26,15 +26,17 @@ This portfolio aims to deliver a seamless and accessible user experience. Key ch
 - Semantic HTML5 markup
 - Modern CSS features
 - Mobile-first workflow
+- Container queries
 - Static Site Generation (SSG)
 - Self-hosted fonts
 - [Astro](https://astro.build) - The web framework for content-driven websites
+- [Tailwind CSS](https://tailwindcss.com) - A utility-first CSS framework
 - [pnpm](https://pnpm.io) - Fast, disk space efficient package manager
 
 ## What I learned
 
 - Building content-driven websites with Astro
-- Using scoped styles for component-specific styling
+- Using container queries in Tailwind CSS
 - Creating reusable components and layouts
 - Importing and using SVGs as components
 - Structuring collections and generating static pages from them
