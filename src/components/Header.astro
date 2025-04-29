@@ -1,4 +1,6 @@
 ---
+import type { HTMLAttributes } from "astro/types";
+
 import AvatarImage from "../assets/gaurav-shukla.webp";
 import BarsIcon from "../assets/icons/bars-solid.svg";
 import XMarkIcon from "../assets/icons/xmark-solid.svg";
@@ -8,6 +10,11 @@ const links: { label: string; href: string }[] = [
   { label: "Projects", href: "/projects" },
   { label: "Contact", href: "mailto:heygauravshukla@gmail.com" },
 ];
+
+type Props = HTMLAttributes<"a">;
+
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
+const subpath = pathname.match(/[^\/]+/g);
 ---
 
 <script>
@@ -67,16 +74,23 @@ const links: { label: string; href: string }[] = [
         class="flex items-center gap-10 @max-2xl:grid @max-2xl:place-content-center @max-2xl:gap-4"
       >
         {
-          links.map((link) => (
-            <li class="@max-2xl:text-center">
-              <a
-                href={link.href}
-                class="text-muted-foreground hover:text-primary lowercase transition-colors @max-2xl:text-lg"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))
+          links.map((link) => {
+            const isActive =
+              link.href === pathname ||
+              link.href === "/" + (subpath?.[0] || "");
+
+            return (
+              <li class="@max-2xl:text-center">
+                <a
+                  aria-current={isActive ? "page" : undefined}
+                  href={link.href}
+                  class="text-muted-foreground hover:text-primary aria-[current=page]:text-primary lowercase transition-colors @max-2xl:text-lg"
+                >
+                  {link.label}
+                </a>
+              </li>
+            );
+          })
         }
       </menu>
     </div>
