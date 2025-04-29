@@ -10,34 +10,6 @@ const links: { label: string; href: string }[] = [
 ];
 ---
 
-<header>
-  <nav class="wrapper">
-    <a class="skip-to-main" href="#main-content">Skip to main content</a>
-    <a class="logo" href="/">
-      <img src={AvatarImage.src} alt="Gaurav Shukla" width="28" height="28" />
-    </a>
-    <button class="menu-opener" aria-controls="primary-nav">
-      <span class="visually-hidden">Open Menu</span>
-      <BarsIcon />
-    </button>
-    <div id="primary-nav" aria-expanded="false">
-      <button class="menu-closer" aria-controls="primary-nav">
-        <span class="visually-hidden">Close Menu</span>
-        <XMarkIcon class="icon" />
-      </button>
-      <menu>
-        {
-          links.map((link) => (
-            <li>
-              <a href={link.href}>{link.label}</a>
-            </li>
-          ))
-        }
-      </menu>
-    </div>
-  </nav>
-</header>
-
 <script>
   const nav = document.querySelector("#primary-nav");
   const navTogglers = document.querySelectorAll(
@@ -53,127 +25,60 @@ const links: { label: string; href: string }[] = [
   });
 </script>
 
-<style>
-  header {
-    container-type: inline-size;
+<header
+  class="bg-background/95 @container sticky top-0 z-5 border-b py-4 backdrop-blur-sm"
+>
+  <nav class="wrapper flex flex-wrap justify-between gap-4">
+    <a
+      href="#main-content"
+      class="bg-primary text-primary-foreground absolute -translate-y-[200%] px-6 py-4 text-sm font-semibold underline transition-transform focus-visible:translate-y-0"
+      >Skip to main content</a
+    >
 
-    position: sticky;
-    top: 0;
-    z-index: 5;
+    <a href="/">
+      <img
+        src={AvatarImage.src}
+        alt="Gaurav Shukla"
+        width="28"
+        height="28"
+        class="rounded-full"
+      />
+    </a>
 
-    background-color: hsl(from var(--clr-surface-1) h s l / 0.5);
-    backdrop-filter: blur(8px);
-    padding-block: 1rem;
-    border-bottom: 1px solid var(--clr-surface-3);
-  }
+    <button class="hidden @max-2xl:block" aria-controls="primary-nav">
+      <span class="sr-only">Open Menu</span>
+      <BarsIcon class="fill-foreground size-4" />
+    </button>
 
-  nav {
-    display: flex;
-    gap: 0 1rem;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-between;
-  }
+    <div
+      id="primary-nav"
+      aria-expanded="false"
+      class="@max-2xl:bg-accent @max-2xl:invisible @max-2xl:fixed @max-2xl:inset-0 @max-2xl:z-5 @max-2xl:grid @max-2xl:h-[100dvh] @max-2xl:-translate-y-[200%] @max-2xl:grid-rows-[auto_1fr] @max-2xl:px-4 @max-2xl:py-6 @max-2xl:transition-all @max-2xl:aria-[expanded=true]:visible @max-2xl:aria-[expanded=true]:translate-y-0"
+    >
+      <button
+        aria-controls="primary-nav"
+        class="hidden @max-2xl:block @max-2xl:justify-self-end"
+      >
+        <span class="sr-only">Close Menu</span>
+        <XMarkIcon class="fill-foreground size-4" />
+      </button>
 
-  .skip-to-main {
-    position: absolute;
-    color: var(--clr-surface-1);
-    background-color: var(--clr-brand);
-    padding: 1em 3em;
-    font-weight: var(--fw-bold);
-    translate: 0 -200%;
-    transition: translate 250ms;
-
-    &:focus-visible {
-      translate: 0 0;
-    }
-  }
-
-  .logo img {
-    border-radius: 100vh;
-  }
-
-  .menu-opener,
-  .menu-closer {
-    display: none;
-  }
-
-  menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-  }
-
-  menu a {
-    text-decoration: none;
-    color: currentColor;
-    text-transform: lowercase;
-    transition: color 250ms;
-
-    &:hover {
-      color: var(--clr-brand);
-    }
-  }
-
-  @container (max-width: 640px) {
-    .menu-opener,
-    .menu-closer {
-      display: grid;
-      align-items: center;
-      background-color: transparent;
-      padding: 0;
-      border: 0;
-
-      > svg {
-        fill: var(--clr-text-2);
-        width: 1rem;
-        height: auto;
-      }
-    }
-
-    #primary-nav {
-      translate: 0 -200%;
-      visibility: hidden;
-
-      display: grid;
-      grid-template-rows: auto 1fr;
-
-      position: fixed;
-      inset: 0;
-      z-index: 5;
-
-      height: 100dvh;
-      background-color: var(--clr-surface-1);
-      padding: 1.5rem 1rem;
-
-      transition: all 300ms;
-    }
-
-    #primary-nav[aria-expanded="true"] {
-      translate: 0 0;
-      visibility: visible;
-    }
-
-    .menu-closer {
-      justify-self: end;
-    }
-
-    menu {
-      display: grid;
-      gap: 1rem;
-      place-content: center;
-    }
-
-    menu li {
-      text-align: center;
-    }
-
-    menu a {
-      font-size: var(--fs-500);
-    }
-  }
-</style>
+      <menu
+        class="flex items-center gap-10 @max-2xl:grid @max-2xl:place-content-center @max-2xl:gap-4"
+      >
+        {
+          links.map((link) => (
+            <li class="@max-2xl:text-center">
+              <a
+                href={link.href}
+                class="text-muted-foreground hover:text-primary lowercase transition-colors @max-2xl:text-lg"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </menu>
+    </div>
+  </nav>
+</header>

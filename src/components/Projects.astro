@@ -18,13 +18,17 @@ if (limit) {
 }
 ---
 
-<section class="section">
-  <div class="wrapper flow">
-    <h2 class="section-title">Projects I have built.</h2>
-    <ul>
+<section class="@container py-20 lg:py-28">
+  <div class="wrapper space-y-8">
+    <h2 class="text-3xl font-medium tracking-tighter @xl:text-4xl">
+      Projects I have built.
+    </h2>
+    <ul
+      class="grid grid-cols-[repeat(auto-fit,minmax(min(20rem,100%),1fr))] gap-4 @2xl:gap-6"
+    >
       {
         projects.map((project) => (
-          <li>
+          <li class="bg-card overflow-hidden rounded-md border">
             <a
               href={`/projects/${project.id}`}
               aria-hidden="true"
@@ -37,13 +41,16 @@ if (limit) {
                 }
                 width="362"
                 height="265"
+                class="w-full transition-transform hover:scale-105"
               />
             </a>
-            <div class="card-content">
-              <h3 class="font-size-500">
+            <div class="grid gap-2 p-4">
+              <h3 class="text-card-foreground hover:text-primary text-xl font-medium tracking-tighter transition-colors">
                 <a href={`/projects/${project.id}`}>{project.data.title}</a>
               </h3>
-              <p>{project.data.description}</p>
+              <p class="text-muted-foreground line-clamp-3">
+                {project.data.description}
+              </p>
             </div>
           </li>
         ))
@@ -51,65 +58,3 @@ if (limit) {
     </ul>
   </div>
 </section>
-
-<style>
-  section {
-    container-type: inline-size;
-  }
-
-  .wrapper {
-    --_flow-space: 2.25rem;
-  }
-
-  ul {
-    --_min-column-size: 20rem;
-
-    list-style: none;
-    padding: 0;
-    margin-block-end: 0;
-
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(min(var(--_min-column-size), 100%), 1fr)
-    );
-  }
-
-  li {
-    background-color: var(--clr-surface-2);
-    border: 1px solid var(--clr-surface-3);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    transition: scale 0.2s ease-in-out;
-
-    &:hover,
-    &:focus-visible {
-      scale: 1.05;
-    }
-  }
-
-  .card-content {
-    padding: 1rem;
-    display: grid;
-    gap: 0.75rem;
-  }
-
-  p {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-  }
-
-  @container (min-width: 640px) {
-    ul {
-      gap: 1.5rem;
-    }
-  }
-</style>

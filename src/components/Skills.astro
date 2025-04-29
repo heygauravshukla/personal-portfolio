@@ -14,55 +14,19 @@ export const skills: string[] = [
 ];
 ---
 
-<section class="section background-surface-2">
-  <div class="wrapper flow">
-    <h2 class="section-title">My technical skills.</h2>
-    <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+<section class="bg-accent @container py-20 lg:py-28">
+  <div class="wrapper space-y-8">
+    <h2 class="text-3xl font-medium tracking-tighter @xl:text-4xl">
+      My technical skills.
+    </h2>
+    <ul class="flex flex-wrap gap-4 *:flex-1 @4xl:gap-6">
+      {
+        skills.map((skill) => (
+          <li class="text-muted-foreground border-muted-foreground min-w-fit rounded-md border border-dotted p-5 text-center uppercase @4xl:p-7">
+            {skill}
+          </li>
+        ))
+      }
     </ul>
   </div>
 </section>
-
-<style>
-  section {
-    container-type: inline-size;
-  }
-
-  .wrapper {
-    --_flow-space: 2.25rem;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin-block-end: 0;
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-
-    & > * {
-      flex: 1;
-    }
-  }
-
-  li {
-    min-width: fit-content;
-    padding: 1.5rem;
-    border: 2px dotted var(--clr-surface-4);
-    border-radius: 8px;
-
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  @container (min-width: 640px) {
-    ul {
-      gap: 1.5rem;
-    }
-
-    li {
-      padding: 2rem;
-    }
-  }
-</style>

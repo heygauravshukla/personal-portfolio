@@ -17,43 +17,67 @@ const { Content } = await render(project);
 ---
 
 <Layout title={project.data.title} description={project.data.description}>
-  <div class="wrapper">
-    <button onclick="history.back()" title="Go back">
-      <ArrowLeftIcon />
-      <span class="visually-hidden">Go back</span>
+  <div class="wrapper @container space-y-8 py-16 lg:py-20">
+    <button
+      onclick="history.back()"
+      title="Go back"
+      class="hover:bg-secondary rounded-full border p-3 transition-colors"
+    >
+      <ArrowLeftIcon class="fill-secondary-foreground size-4" />
+      <span class="sr-only">Go back</span>
     </button>
 
-    <article class="flow">
-      <header class="flow">
-        <time datetime={new Date(project.data.publishDate).toISOString()}>
-          {
-            new Date(project.data.publishDate).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })
-          }
+    <article class="mx-auto max-w-2xl space-y-4">
+      <header class="space-y-6">
+        <time
+          datetime={new Date(project.data.publishDate).toISOString()}
+          class="text-muted-foreground flex items-center gap-3"
+        >
+          <span
+            class="bg-muted-foreground h-4 w-0.5 rounded-full"
+            aria-hidden="true"></span>
+          <span
+            >{
+              new Date(project.data.publishDate).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            }</span
+          >
         </time>
-        <h1 class="font-size-xl">{project.data.title}</h1>
-        <ul class="tags">
-          {project.data.tags.map((tag) => <li>{tag}</li>)}
+        <h1
+          class="mb-4 text-4xl leading-[1.1] font-medium tracking-tighter @md:text-balance @xl:text-5xl"
+        >
+          {project.data.title}
+        </h1>
+        <ul class="flex flex-wrap items-center gap-3">
+          {
+            project.data.tags.map((tag) => (
+              <li class="bg-primary text-primary-foreground rounded-full px-3 py-1 text-xs font-medium">
+                {tag}
+              </li>
+            ))
+          }
         </ul>
-        <p>{project.data.description}</p>
+        <p class="text-muted-foreground text-base/7">
+          {project.data.description}
+        </p>
         <img
-          class="project-img"
           src={project.data.img}
           alt={project.data.img_alt ?? `Preview image of ${project.data.title}`}
           width="750"
           height="550"
+          class="w-full rounded-lg"
         />
-        <div class="button-group">
+        <div class="flex flex-wrap items-center gap-3">
           {
             project.data.live_site_url && (
               <a
-                class="button primary"
                 href={project.data.live_site_url}
                 target="_blank"
                 rel="noopener noreferrer"
+                class="btn btn-primary"
               >
                 View Live Site
               </a>
@@ -62,10 +86,10 @@ const { Content } = await render(project);
           {
             project.data.source_code_url && (
               <a
-                class="button"
                 href={project.data.source_code_url}
                 target="_blank"
                 rel="noopener noreferrer"
+                class="btn btn-secondary"
               >
                 Source Code
               </a>
@@ -73,90 +97,11 @@ const { Content } = await render(project);
           }
         </div>
       </header>
-      <main class="prose flow">
+      <main
+        class="**:[a]:text-primary **:[code]:bg-muted **:[code]:text-muted-foreground **:[p,li]:text-muted-foreground **:[a]:underline **:[code]:rounded-sm **:[code]:px-1 **:[code]:py-px **:[h1,h2,h3,h4]:mt-8 **:[h1,h2,h3,h4]:mb-4 **:[h1,h2,h3,h4]:text-xl **:[h1,h2,h3,h4]:font-medium **:[li]:pl-2 **:[p,li]:text-base/7 **:[ul]:list-disc **:[ul]:pl-8 **:[ul,p]:my-2"
+      >
         <Content />
       </main>
     </article>
   </div>
 </Layout>
-
-<style>
-  button[title="Go back"] {
-    cursor: pointer;
-    display: grid;
-    place-items: center;
-
-    width: 3rem;
-    height: 3rem;
-    background-color: transparent;
-    border: 1px solid var(--clr-surface-3);
-    border-radius: 100vh;
-    margin-block-start: 4rem;
-
-    transition: background-color 0.2s ease-in-out;
-
-    &:hover {
-      background-color: var(--clr-surface-2);
-    }
-
-    & > svg {
-      fill: var(--clr-text-2);
-    }
-  }
-
-  article {
-    --_flow-space: 2rem;
-
-    max-width: 70ch;
-    margin-inline: auto;
-    margin-block: 4rem;
-  }
-
-  header {
-    --_flow-space: 1.5rem;
-  }
-
-  time {
-    border-inline-start: 2px solid var(--clr-surface-4);
-    padding-inline-start: 1rem;
-  }
-
-  .tags {
-    list-style: none;
-    padding: 0;
-    margin-block-end: 0;
-
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.875rem;
-  }
-
-  .tags li {
-    text-transform: uppercase;
-    font-size: var(--fs-100);
-    font-weight: var(--fw-semi-bold);
-
-    background-color: var(--clr-brand);
-    color: var(--clr-surface-1);
-    padding: 0.25rem 1rem;
-    border-radius: 100vh;
-  }
-
-  .project-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-
-  .button-group {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.875rem;
-  }
-
-  .prose {
-    --_flow-space: 1.5rem;
-  }
-</style>
