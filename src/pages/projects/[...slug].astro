@@ -3,6 +3,8 @@ import { getCollection, render } from "astro:content";
 
 import Layout from "../../layouts/Layout.astro";
 import ArrowLeftIcon from "../../assets/icons/arrow-left-solid.svg";
+import ArrowUpRightFromSquareIcon from "../../assets/icons/arrow-up-right-from-square-solid.svg";
+import GitHubIcon from "../../assets/icons/github-brands.svg";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -83,7 +85,7 @@ const { Content } = await render(project);
                 rel="noopener noreferrer"
                 class="btn btn-primary"
               >
-                View Live Site
+                <ArrowUpRightFromSquareIcon /> View Live Site
               </a>
             )
           }
@@ -95,7 +97,7 @@ const { Content } = await render(project);
                 rel="noopener noreferrer"
                 class="btn btn-secondary"
               >
-                Source Code
+                <GitHubIcon /> Source Code
               </a>
             )
           }
