@@ -18,16 +18,18 @@ const { Content } = await render(project);
 
 <Layout title={project.data.title} description={project.data.description}>
   <div class="wrapper @container space-y-8 py-16 lg:py-20">
-    <button
-      onclick="history.back()"
-      title="Go back"
-      class="hover:bg-accent group rounded-full border p-3 transition-colors"
-    >
-      <ArrowLeftIcon
-        class="fill-muted-foreground group-hover:fill-accent-foreground size-4 transition-colors"
-      />
-      <span class="sr-only">Go back</span>
-    </button>
+    <nav aria-label="Breadcrumb">
+      <button
+        onclick="history.back()"
+        title="Go back"
+        class="hover:bg-accent group rounded-full border p-3 transition-colors"
+      >
+        <ArrowLeftIcon
+          class="fill-muted-foreground group-hover:fill-accent-foreground size-4 transition-colors"
+        />
+        <span class="sr-only">Go back</span>
+      </button>
+    </nav>
 
     <article class="mx-auto max-w-2xl space-y-4">
       <header class="space-y-6">
