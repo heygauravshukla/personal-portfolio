@@ -21,9 +21,11 @@ const { Content } = await render(project);
     <button
       onclick="history.back()"
       title="Go back"
-      class="hover:bg-secondary rounded-full border p-3 transition-colors"
+      class="hover:bg-accent group rounded-full border p-3 transition-colors"
     >
-      <ArrowLeftIcon class="fill-secondary-foreground size-4" />
+      <ArrowLeftIcon
+        class="fill-muted-foreground group-hover:fill-accent-foreground size-4 transition-colors"
+      />
       <span class="sr-only">Go back</span>
     </button>
 
@@ -98,7 +100,7 @@ const { Content } = await render(project);
         </div>
       </header>
       <main
-        class="**:[a]:text-primary **:[code]:bg-muted **:[code]:text-muted-foreground **:[p,li]:text-muted-foreground **:[a]:underline **:[code]:rounded-sm **:[code]:px-1 **:[code]:py-px **:[h1,h2,h3,h4]:mt-8 **:[h1,h2,h3,h4]:mb-4 **:[h1,h2,h3,h4]:text-xl **:[h1,h2,h3,h4]:font-medium **:[li]:pl-2 **:[p,li]:text-base/7 **:[ul]:list-disc **:[ul]:pl-8 **:[ul,p]:my-2"
+        class="**:[a]:text-primary **:[code]:bg-muted **:[p,li]:text-muted-foreground **:[a]:underline **:[code]:rounded **:[code]:px-1 **:[code]:py-px **:[code]:text-sm **:[h1,h2,h3,h4]:font-medium **:[h2,h3]:mt-8 **:[h2,h3]:mb-4 **:[h2,h3]:text-xl **:[li]:pl-2 **:[p,li]:text-base/7 **:[ul]:list-disc **:[ul]:pl-8 **:[ul,p]:my-2"
       >
         <Content />
       </main>

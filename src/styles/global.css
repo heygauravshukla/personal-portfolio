@@ -184,12 +184,12 @@
   }
 
   .btn {
-    @apply inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm/6 font-semibold transition-opacity hover:opacity-75 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0;
+    @apply inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm/6 font-semibold transition-opacity hover:opacity-75 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:fill-current;
   }
   .btn-primary {
-    @apply bg-primary text-primary-foreground [&_svg]:fill-primary-foreground;
+    @apply bg-primary text-primary-foreground;
   }
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground [&_svg]:fill-secondary-foreground;
+    @apply bg-secondary text-secondary-foreground;
   }
 }
