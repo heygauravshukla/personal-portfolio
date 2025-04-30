@@ -180,7 +180,7 @@
 
 @layer components {
   .wrapper {
-    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-6xl px-4 md:px-6;
   }
 
   .btn {
