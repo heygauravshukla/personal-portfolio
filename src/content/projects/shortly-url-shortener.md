@@ -10,6 +10,7 @@ source_code_url: https://github.com/heygauravshukla/shortly-url-shortener
 tags:
   - React
   - Next.js
+  - TypeScript
   - Tailwind CSS
   - Shadcn UI
 ---
@@ -23,9 +24,9 @@ Users should be able to:
 - See a list of their shortened links, even after refreshing the browser.
 - Copy the shortened link to their clipboard in a single click.
 - Receive an error message when the `form` is submitted if:
-  - The `input` field is empty.
-  - The submitted URL has already been shortened.
-  - The submitted URL is a previously generated shortened link.
+    - The `input` field is empty.
+    - The submitted URL has already been shortened.
+    - The submitted URL is a previously generated shortened link.
 
 ## Built with
 

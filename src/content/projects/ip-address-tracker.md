@@ -11,6 +11,7 @@ tags:
   - React
   - Next.js
   - Tailwind CSS
+  - Shadcn UI
 ---
 
 ## The challenge
@@ -37,5 +38,7 @@ This project enhanced my understanding of several key concepts, including:
 
 - Integrating external APIs into a Next.js project and managing dynamic responses effectively.
 - Implementing interactive map features using the Leaflet library.
-- Securing sensitive information, such as API keys, through environment variables to prevent exposure in public repositories.
-- Utilizing Next.js Server-Side Rendering (SSR) to handle API requests securely, thereby avoiding key exposure in network traffic.
+- Securing sensitive information, such as API keys, through environment variables to prevent exposure in public
+  repositories.
+- Using Next.js Server-Side Rendering (SSR) to handle API requests securely, thereby avoiding key exposure in
+  network traffic.

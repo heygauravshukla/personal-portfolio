@@ -9,6 +9,7 @@ live_site_url: https://heygauravshukla.netlify.app
 source_code_url: https://github.com/heygauravshukla/personal-website
 tags:
   - Astro
+  - TypeScript
   - Tailwind CSS
 ---
 
@@ -29,7 +30,7 @@ This portfolio aims to deliver a seamless and accessible user experience. Key ch
 - Container queries
 - Static Site Generation (SSG)
 - Self-hosted fonts
-- [Astro](https://astro.build) - The web framework for content-driven websites
+- [Astro](https://astro.build) - The web framework for content-driven websites
 - [Tailwind CSS](https://tailwindcss.com) - A utility-first CSS framework
 - [pnpm](https://pnpm.io) - Fast, disk space efficient package manager
 
