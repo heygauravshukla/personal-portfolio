@@ -3,18 +3,6 @@ import SunIcon from "../assets/icons/sun-solid.svg";
 import MoonIcon from "../assets/icons/moon-solid.svg";
 ---
 
-<script>
-  const themeToggler = document.getElementById("theme-toggler");
-
-  themeToggler?.addEventListener("click", () => {
-    if (document.documentElement.classList.contains("dark")) {
-      document.documentElement.classList.remove("dark");
-    } else {
-      document.documentElement.classList.add("dark");
-    }
-  });
-</script>
-
 <button
   id="theme-toggler"
   title="Toggle theme"
@@ -31,3 +19,15 @@ import MoonIcon from "../assets/icons/moon-solid.svg";
   />
   <span class="sr-only">Toggle theme</span>
 </button>
+
+<script>
+  const themeToggler = document.getElementById("theme-toggler");
+
+  themeToggler?.addEventListener("click", () => {
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  });
+</script>
