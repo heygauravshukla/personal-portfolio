@@ -22,7 +22,7 @@ const { Content } = await render(project);
   <div class="wrapper @container space-y-8 py-16 md:py-24">
     <nav aria-label="Breadcrumb">
       <button
-        onclick="history.back()"
+        onclick="history.back();"
         title="Go back"
         class="hover:bg-accent group rounded-full border p-3 transition-colors"
       >
@@ -60,7 +60,7 @@ const { Content } = await render(project);
         <ul class="flex flex-wrap items-center gap-3">
           {
             project.data.tags.map((tag) => (
-              <li class="bg-primary text-primary-foreground rounded-full px-3 py-1 text-xs font-medium">
+              <li class="bg-secondary text-secondary-foreground rounded-full px-3 py-1 text-xs font-medium">
                 {tag}
               </li>
             ))
@@ -85,7 +85,8 @@ const { Content } = await render(project);
                 rel="noopener noreferrer"
                 class="btn btn-primary"
               >
-                <ArrowUpRightFromSquareIcon /> View Live Site
+                <ArrowUpRightFromSquareIcon />
+                View Live Site
               </a>
             )
           }
@@ -97,7 +98,8 @@ const { Content } = await render(project);
                 rel="noopener noreferrer"
                 class="btn btn-secondary"
               >
-                <GitHubIcon /> Source Code
+                <GitHubIcon />
+                Source Code
               </a>
             )
           }
