@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const roboto_mono = Roboto_Mono({
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto-mono",
 });
 
 export const metadata: Metadata = {
@@ -27,10 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html
+      lang="en"
+      className={`${inter.variable} ${roboto_mono.variable} antialiased`}
+      suppressHydrationWarning
+    >
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
