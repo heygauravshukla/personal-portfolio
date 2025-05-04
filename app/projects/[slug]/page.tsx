@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
+import { Icons } from "@/components/icons";
 import TypographyH1 from "@/components/typography-h1";
 import Wrapper from "@/components/wrapper";
 import { Button } from "@/components/ui/button";
@@ -151,7 +152,7 @@ export default async function Project(props: {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <ExternalLink />
+                    <Icons.github className="fill-current" />
                     Source Code
                   </Link>
                 </Button>
