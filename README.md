@@ -1,4 +1,4 @@
-# Personal Website
+# Personal Website with Astro
 
 This is my personal website built with Astro, Modern CSS and a lot of hard work — crafted to showcase my projects, technical skills, and ongoing journey as a developer.
 
@@ -32,7 +32,7 @@ This portfolio aims to deliver a seamless and accessible user experience. Key ch
 
 ### Links
 
-- Source Code: [https://github.com/heygauravshukla/personal-website](https://github.com/heygauravshukla/personal-website)
+- Source Code: [https://github.com/heygauravshukla/personal-website-astro](https://github.com/heygauravshukla/personal-website)
 - Live Site URL: [https://heygauravshukla.netlify.app](https://heygauravshukla.netlify.app)
 
 ## My process
@@ -75,5 +75,5 @@ Planned improvements include:
 
 ## Author
 
-- Website - [Gaurav Shukla](https://heygauravshukla.netlify.app)
+- Website - [Gaurav Shukla](https://heygauravshukla.vercel.app)
 - X - [@heygauravshukla](https://www.x.com/heygauravshukla)
