@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Header from "@/components/header";
 import CTA from "@/components/cta";
+import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
@@ -47,6 +48,7 @@ export default function RootLayout({
             {children}
             <CTA />
           </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
