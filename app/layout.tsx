@@ -3,6 +3,7 @@ import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/header";
+import CTA from "@/components/cta";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
@@ -42,7 +43,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main>{children}</main>
+          <main>
+            {children}
+            <CTA />
+          </main>
         </ThemeProvider>
       </body>
     </html>
