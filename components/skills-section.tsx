@@ -15,7 +15,7 @@ const skills: string[] = [
   "Figma",
 ];
 
-export default function Skills() {
+export default function SkillsSection() {
   return (
     <section className="bg-muted @container py-20 md:py-28">
       <Wrapper className="space-y-8">

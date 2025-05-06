@@ -3,7 +3,7 @@ import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/header";
-import CTA from "@/components/cta";
+import CTASection from "@/components/cta-section";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -46,7 +46,7 @@ export default function RootLayout({
           <Header />
           <main>
             {children}
-            <CTA />
+            <CTASection />
           </main>
           <Footer />
         </ThemeProvider>

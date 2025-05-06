@@ -30,7 +30,7 @@ const links: Link[] = [
   },
 ];
 
-export default function Hero() {
+export default function HeroSection() {
   return (
     <section className="@container py-24">
       <Wrapper>

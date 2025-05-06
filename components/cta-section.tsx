@@ -4,7 +4,7 @@ import { Mail } from "lucide-react";
 import Wrapper from "@/components/wrapper";
 import { Button } from "@/components/ui/button";
 
-export default function CTA() {
+export default function CTASection() {
   return (
     <section className="bg-accent text-accent-foreground @container py-20 md:py-28">
       <Wrapper className="space-y-4 text-center @2xl:space-y-5">
