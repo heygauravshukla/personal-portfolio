@@ -1,6 +1,6 @@
-# Personal Website
+# Personal Portfolio
 
-This is my personal website built with Next.js, shadcn/ui and a lot of hard work — crafted to showcase my
+This is my personal portfolio built with Next.js, shadcn/ui and a lot of hard work — crafted to showcase my
 technical skills, projects and ongoing journey as a developer.
 
 ## Table of contents
@@ -29,12 +29,12 @@ This portfolio aims to deliver a seamless and accessible user experience. Key ch
 
 ### Screenshot
 
-![Preview of Personal Website](/public/preview-personal-website.webp)
+![Preview of Personal Portfolio](/public/preview-personal-portfolio.webp)
 
 ### Links
 
 - Source
-  Code: [https://github.com/heygauravshukla/personal-website](https://github.com/heygauravshukla/personal-website)
+  Code: [https://github.com/heygauravshukla/personal-portfolio](https://github.com/heygauravshukla/personal-portfolio)
 - Live Site URL: [https://heygauravshukla.vercel.app](https://heygauravshukla.vercel.app)
 
 ## My process
