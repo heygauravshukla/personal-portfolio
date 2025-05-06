@@ -1,12 +1,12 @@
 ---
-title: Personal Website
+title: Personal Portfolio
 publishDate: 2025-04-11 12:02:00
-img: /images/preview-personal-website.webp
-img_alt: Preview of Personal Website
+img: /images/preview-personal-portfolio.webp
+img_alt: Preview of Personal Portfolio
 description: |
   A personal portfolio to showcase my projects and technical skills. Fully responsive, accessible, and built with modern web technologies.
-live_site_url: https://heygauravshukla.netlify.app
-source_code_url: https://github.com/heygauravshukla/personal-website-astro
+live_site_url: https://heygauravshukla.vercel.app
+source_code_url: https://github.com/heygauravshukla/personal-portfolio
 tags:
   - Astro
   - TypeScript

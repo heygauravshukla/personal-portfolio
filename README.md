@@ -1,6 +1,6 @@
-# Personal Website with Astro
+# Personal Portfolio
 
-This is my personal website built with Astro, Modern CSS and a lot of hard work — crafted to showcase my projects, technical skills, and ongoing journey as a developer.
+This is my personal portfolio built with Astro, Tailwind CSS and a lot of hard work — crafted to showcase my projects, technical skills, and ongoing journey as a developer.
 
 ## Table of contents
 
@@ -28,12 +28,12 @@ This portfolio aims to deliver a seamless and accessible user experience. Key ch
 
 ### Screenshot
 
-![Preview of Personal Website](/public/images/preview-personal-website.webp)
+![Preview of Personal Portfolio](/public/images/preview-personal-portfolio.webp)
 
 ### Links
 
-- Source Code: [https://github.com/heygauravshukla/personal-website-astro](https://github.com/heygauravshukla/personal-website)
-- Live Site URL: [https://heygauravshukla.netlify.app](https://heygauravshukla.netlify.app)
+- Source Code: [https://github.com/heygauravshukla/personal-portfolio](https://github.com/heygauravshukla/personal-portfolio)
+- Live Site URL: [https://heygauravshukla.vercel.app](https://heygauravshukla.vercel.app)
 
 ## My process
 
@@ -67,7 +67,7 @@ Planned improvements include:
 
 ### Useful resources
 
-- [📺 Kevin Powell – Building a website with Astro](https://youtu.be/Thudicbgqtg?si=TCu1qbhV5ZIcaZvG) - Helpful walkthrough of Astro’s fundamentals and project setup.
+- [📺 Kevin Powell – Building a website with Astro](https://youtu.be/Thudicbgqtg?si=TCu1qbhV5ZIcaZvG) - Helpful walkthrough of Astro's fundamentals and project setup.
 - [📘 Astro Documentation](https://docs.astro.build/en/getting-started) - Clear and concise reference that helped me understand project structure and content collections.
 - [🔤 Google Fonts](https://fonts.google.com) - Used to download the Inter variable font (TTF format) for local hosting.
 - [⭐ Font Awesome](https://fontawesome.com/icons) - Used to download and locally serve SVG icon files for buttons and UI components.
