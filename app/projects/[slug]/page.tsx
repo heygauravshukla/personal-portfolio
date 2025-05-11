@@ -5,12 +5,13 @@ import { notFound } from "next/navigation";
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 import { Icons } from "@/components/icons";
 import TypographyH1 from "@/components/typography-h1";
 import Wrapper from "@/components/wrapper";
 import { Button } from "@/components/ui/button";
+import { BackButton } from "@/components/back-button";
 
 // Define frontmatter structure for project MDX files
 interface Frontmatter {
@@ -74,12 +75,7 @@ export default async function Project(props: {
     return (
       <Wrapper className="@container space-y-8 py-16 md:py-20">
         <nav aria-label="Breadcrumb">
-          <Button asChild title="Go back" variant="outline" size="icon">
-            <Link href="/projects">
-              <ArrowLeft />
-              <span className="sr-only">Go back</span>
-            </Link>
-          </Button>
+          <BackButton />
         </nav>
 
         <article className="mx-auto max-w-2xl space-y-4">
